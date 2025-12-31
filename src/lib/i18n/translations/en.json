@@ -10,11 +10,17 @@
 		"map": "Map",
 		"list": "List",
 		"about": "About",
-		"goTo": "Go to"
+		"goTo": "Go to",
+		"category": "Category",
+		"changeLanguage": "Change language",
+		"noPlacesMatchFilters": "No places match the current filters. Try adjusting your filters.",
+		"noCategoriesToDisplay": "No categories to display."
 	},
 	"home": {
 		"title": "Local Guide",
-		"subtitle": "Discover amazing destinations and explore the world's most beautiful places"
+		"subtitle": "Discover amazing destinations and explore the world's most beautiful places",
+		"destinations": "Destinations",
+		"selectLocation": "Select Location"
 	},
 	"categories": {
 		"activity": "Activity",

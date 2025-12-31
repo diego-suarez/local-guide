@@ -1,0 +1,35 @@
+{
+	"common": {
+		"explore": "Explorar",
+		"filters": "Filtros",
+		"selectAll": "Selecionar tudo",
+		"clear": "Limpar",
+		"places": "lugares",
+		"clickMarker": "Clique em um marcador para ver detalhes",
+		"back": "Voltar",
+		"map": "Mapa",
+		"list": "Lista",
+		"about": "Sobre",
+		"goTo": "Ir para",
+		"category": "Categoria",
+		"changeLanguage": "Mudar idioma",
+		"noPlacesMatchFilters": "Nenhum lugar corresponde aos filtros atuais. Tente ajustar os filtros.",
+		"noCategoriesToDisplay": "Nenhuma categoria para exibir."
+	},
+	"home": {
+		"title": "Guia Local",
+		"subtitle": "Descubra destinos incríveis e explore os lugares mais bonitos do mundo",
+		"destinations": "Destinos",
+		"selectLocation": "Selecionar local"
+	},
+	"categories": {
+		"activity": "Atividade",
+		"hiking": "Trilha",
+		"restaurant": "Restaurante",
+		"entertainment": "Entretenimento",
+		"beach": "Praia",
+		"nature": "Natureza",
+		"museum": "Museu",
+		"viewpoint": "Mirante"
+	}
+}

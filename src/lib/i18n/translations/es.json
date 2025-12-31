@@ -10,11 +10,17 @@
 		"map": "Mapa",
 		"list": "Lista",
 		"about": "Acerca de",
-		"goTo": "Ir a"
+		"goTo": "Ir a",
+		"category": "Categoría",
+		"changeLanguage": "Cambiar idioma",
+		"noPlacesMatchFilters": "Ningún lugar coincide con los filtros actuales. Prueba ajustando tus filtros.",
+		"noCategoriesToDisplay": "No hay categorías para mostrar."
 	},
 	"home": {
 		"title": "Guía Local",
-		"subtitle": "Descubre destinos increíbles y explora los lugares más hermosos del mundo"
+		"subtitle": "Descubre destinos increíbles y explora los lugares más hermosos del mundo",
+		"destinations": "Destinos",
+		"selectLocation": "Seleccionar ubicación"
 	},
 	"categories": {
 		"activity": "Actividad",
