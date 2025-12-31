@@ -9,7 +9,8 @@
 		"back": "Volver",
 		"map": "Mapa",
 		"list": "Lista",
-		"about": "Acerca de"
+		"about": "Acerca de",
+		"goTo": "Ir a"
 	},
 	"home": {
 		"title": "Guía Local",

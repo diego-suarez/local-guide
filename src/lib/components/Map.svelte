@@ -4,6 +4,21 @@
 	import { language } from '$lib/i18n';
 	import { getPlaceText } from '$lib/utils/i18n';
 	import type { Place } from '$lib/types';
+	import enTranslations from '$lib/i18n/translations/en.json';
+	import esTranslations from '$lib/i18n/translations/es.json';
+
+	// Helper functions to generate navigation URLs
+	function getWazeUrl(lat: number, lng: number): string {
+		return `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
+	}
+
+	function getGoogleMapsUrl(lat: number, lng: number): string {
+		return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+	}
+
+	function getAppleMapsUrl(lat: number, lng: number): string {
+		return `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+	}
 
 	interface Props {
 		center: [number, number];
@@ -44,36 +59,155 @@
 		eye: '<path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /><circle cx="12" cy="12" r="3" />'
 	};
 
+	// Helper to get category translation
+	function getCategoryTranslation(categoryKey: string): string {
+		const translations = currentLang === 'es' ? esTranslations : enTranslations;
+		return translations.categories[categoryKey as keyof typeof translations.categories] || categoryKey;
+	}
+
+	// Create modern popup HTML for place details
+	function createPopupContent(place: Place, category: { icon: string; color: string }): string {
+		const iconPath = iconPaths[category.icon] || '';
+		const placeTitle = getPlaceText(place, 'title');
+		const placeDescription = getPlaceText(place, 'description');
+		const categoryName = getCategoryTranslation(place.category);
+		const [lat, lng] = place.coordinates;
+		const goToLabel = currentLang === 'es' ? esTranslations.common.goTo : enTranslations.common.goTo;
+		
+		return `
+			<div class="modern-popup">
+				<!-- Fixed header section -->
+				<div class="popup-fixed-header">
+					<!-- Header with category badge -->
+					<div class="popup-header" style="border-color: ${category.color};">
+						<div class="popup-category-badge" style="background: ${hexToRgba(category.color, 0.15)}; border-color: ${category.color};">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${category.color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								${iconPath}
+							</svg>
+						</div>
+						<div class="popup-category-info">
+							<div class="popup-category-label">Category</div>
+							<div class="popup-category-name" style="color: ${category.color};">${categoryName}</div>
+						</div>
+					</div>
+					
+					<!-- Title -->
+					<h3 class="popup-title">${placeTitle}</h3>
+				</div>
+				
+				<!-- Scrollable description section -->
+				<div class="popup-scrollable-content">
+					<p class="popup-description">${placeDescription}</p>
+					
+					<!-- Navigation Links -->
+					<div class="popup-navigation">
+						<div class="popup-navigation-label">${goToLabel}</div>
+						<div class="popup-navigation-links">
+							<a href="${getWazeUrl(lat, lng)}" target="_blank" rel="noopener noreferrer" class="nav-text-link">Waze</a>
+							<a href="${getGoogleMapsUrl(lat, lng)}" target="_blank" rel="noopener noreferrer" class="nav-text-link">Google Maps</a>
+							<a href="${getAppleMapsUrl(lat, lng)}" target="_blank" rel="noopener noreferrer" class="nav-text-link">Apple Maps</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		`;
+	}
+
+	// Create modern floating label tooltip
+	function createFloatingLabel(title: string, color: string): string {
+		return `
+			<div class="floating-label" style="--label-color: ${color};">
+				<div class="floating-label-content">
+					${title}
+				</div>
+				<div class="floating-label-arrow"></div>
+			</div>
+		`;
+	}
+
 	function createCustomIcon(category: string, color: string, iconName: string) {
 		const iconPath = iconPaths[iconName] || '';
-		const bgColor = hexToRgba(color, 0.2); // Increased opacity from 0.2 to 0.5 for better visibility
 		
-		// Create square marker matching filter style: rounded-lg, colored background, border
+		// Modern pill-shaped marker with pin point - state-of-the-art design
+		// Using solid background with gradient for better visibility and modern look
 		const markerHtml = `
-			<div style="
-				width: 32px;
-				height: 32px;
-				border-radius: 6px;
-				background-color: ${bgColor};
-				border: 2px solid ${color};
+			<div class="modern-marker-wrapper" style="
+				position: relative;
+				width: 40px;
+				height: 40px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+				transform-origin: center bottom;
 			">
-				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					${iconPath}
-				</svg>
+				<!-- Main marker body - pill shape -->
+				<div class="modern-marker-body" style="
+					width: 40px;
+					height: 40px;
+					border-radius: 20px 20px 20px 4px;
+					background: linear-gradient(135deg, ${color}, ${adjustColorBrightness(color, -20)});
+					border: 2px solid ${color};
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					box-shadow: 
+						0 4px 12px rgba(0, 0, 0, 0.3),
+						0 0 20px ${hexToRgba(color, 0.4)},
+						inset 0 1px 0 rgba(255, 255, 255, 0.2);
+					transform: rotate(-45deg);
+					transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+					position: relative;
+					overflow: visible;
+				">
+					<!-- Inner glow effect -->
+					<div style="
+						position: absolute;
+						inset: 2px;
+						border-radius: 18px 18px 18px 2px;
+						background: ${hexToRgba(color, 0.15)};
+						pointer-events: none;
+					"></div>
+					<!-- Icon rotated back to upright -->
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(45deg); filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));">
+						${iconPath}
+					</svg>
+				</div>
+				<!-- Pin point shadow -->
+				<div style="
+					position: absolute;
+					bottom: -6px;
+					left: 50%;
+					transform: translateX(-50%) rotate(45deg);
+					width: 12px;
+					height: 12px;
+					background: ${color};
+					border-radius: 0 0 2px 0;
+					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+					z-index: -1;
+				"></div>
 			</div>
 		`;
 
 		return L.divIcon({
 			className: 'custom-marker',
 			html: markerHtml,
-			iconSize: [32, 32],
-			iconAnchor: [16, 16], // Center of marker (both horizontally and vertically)
-			popupAnchor: [0, -24] // Position tooltip above marker center
+			iconSize: [40, 40],
+			iconAnchor: [20, 36], // Anchor at the pin point
+			popupAnchor: [0, -40] // Position tooltip above marker
 		});
+	}
+
+	// Helper function to adjust color brightness
+	function adjustColorBrightness(hex: string, percent: number): string {
+		const r = parseInt(hex.slice(1, 3), 16);
+		const g = parseInt(hex.slice(3, 5), 16);
+		const b = parseInt(hex.slice(5, 7), 16);
+		
+		const newR = Math.max(0, Math.min(255, r + (r * percent / 100)));
+		const newG = Math.max(0, Math.min(255, g + (g * percent / 100)));
+		const newB = Math.max(0, Math.min(255, b + (b * percent / 100)));
+		
+		return `#${Math.round(newR).toString(16).padStart(2, '0')}${Math.round(newG).toString(16).padStart(2, '0')}${Math.round(newB).toString(16).padStart(2, '0')}`;
 	}
 
 	// Helper function to convert hex to rgba
@@ -108,37 +242,50 @@
 			const icon = createCustomIcon(place.category, category.color, category.icon);
 			const placeTitle = getPlaceText(place, 'title');
 			
-			// Create tooltip positioned above the marker to avoid overlay
+			// Create modern floating label tooltip
 			const tooltip = L.tooltip({
-				className: 'custom-tooltip',
+				className: 'floating-label-tooltip',
 				direction: 'top',
 				permanent: false,
-				interactive: false
-			}).setContent(`<div class="font-semibold text-gray-800 text-sm">${placeTitle}</div>`);
+				interactive: false,
+				offset: [0, -50] // Position well above marker
+			}).setContent(createFloatingLabel(placeTitle, category.color));
+
+			// Create modern popup for place details
+			// Responsive max width based on screen size
+			const isMobile = browser && window.innerWidth < 768;
+			const popup = L.popup({
+				className: 'modern-popup-container',
+				maxWidth: isMobile ? Math.min(window.innerWidth - 40, 320) : 400,
+				closeButton: true,
+				autoPan: true,
+				// More padding on mobile to ensure close button and content are visible
+				autoPanPadding: isMobile ? [80, 20] : [50, 50]
+			}).setContent(createPopupContent(place, category));
 
 			const marker = L.marker([place.coordinates[0], place.coordinates[1]], { 
 				icon,
-				riseOnHover: true,
+				riseOnHover: false,
 				zIndexOffset: 1000
 			})
 				.addTo(map)
 				.bindTooltip(tooltip)
+				.bindPopup(popup)
 				.on('click', function(e) {
 					e.originalEvent.stopPropagation();
-					selectedPlace = place;
-					// Smooth scroll to details if on mobile
-					if (browser && window.innerWidth < 768) {
-						document.getElementById('place-details')?.scrollIntoView({ behavior: 'smooth' });
-					}
+					selectedPlace = place; // Keep for highlighting
+					this.openPopup();
 				})
 				.on('mouseover', function () {
 					this.openTooltip();
-					// Increase z-index on hover for better clickability
 					this.setZIndexOffset(2000);
 				})
 				.on('mouseout', function () {
 					this.closeTooltip();
-					this.setZIndexOffset(1000);
+					// Only reset z-index if not selected
+					if (!selectedPlace || selectedPlace.id !== place.id) {
+						this.setZIndexOffset(1000);
+					}
 				});
 
 			markers.set(place.id, marker);
@@ -161,11 +308,26 @@
 			isInitialLoad = false;
 		}
 
+		// Remove selected class from all markers first
+		markers.forEach((marker) => {
+			marker.getElement()?.classList.remove('marker-selected');
+			// Reset z-index for non-selected markers
+			marker.setZIndexOffset(1000);
+		});
+
 		// Highlight selected place (but don't override initial bounds fit)
 		if (selectedPlace && markers.has(selectedPlace.id) && !isInitialLoad) {
 			const marker = markers.get(selectedPlace.id);
 			if (marker) {
-				marker.getElement()?.classList.add('marker-selected');
+				const category = categories[selectedPlace.category];
+				const markerElement = marker.getElement();
+				if (markerElement && category) {
+					markerElement.classList.add('marker-selected');
+					// Add color as CSS variable for glow effect
+					markerElement.style.setProperty('--marker-color', category.color);
+					// Ensure selected marker is on top
+					marker.setZIndexOffset(3000);
+				}
 				map.setView([selectedPlace.coordinates[0], selectedPlace.coordinates[1]], 14, {
 					animate: true,
 					duration: 0.5
@@ -233,45 +395,382 @@
 		pointer-events: auto !important;
 	}
 
+	/* Apply transforms to the wrapper, not the Leaflet container */
+	:global(.custom-marker .modern-marker-wrapper) {
+		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+		transform-origin: center bottom !important;
+	}
+
+	:global(.custom-marker:hover .modern-marker-wrapper) {
+		transform: scale(1.15) translateY(-2px) !important;
+	}
+
+	:global(.custom-marker:hover .modern-marker-body) {
+		box-shadow: 
+			0 6px 20px rgba(0, 0, 0, 0.4),
+			0 0 30px rgba(0, 255, 255, 0.6),
+			inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+	}
+
 	:global(.leaflet-marker-icon) {
 		cursor: pointer !important;
 	}
 
-	:global(.marker-selected) {
-		filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.9));
-		z-index: 2000 !important;
+	:global(.marker-selected .modern-marker-wrapper) {
+		transform: scale(1.2) translateY(-3px) !important;
 	}
 
-	:global(.custom-tooltip) {
-		font-family: 'Inter', sans-serif;
-		padding: 6px 10px;
-		border-radius: 6px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-		background: white;
-		border: 1px solid rgba(0, 0, 0, 0.1);
+	:global(.marker-selected .modern-marker-body) {
+		box-shadow: 
+			0 8px 24px rgba(0, 0, 0, 0.5),
+			0 0 40px var(--marker-color, #00ffff),
+			inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+		animation: pulse-glow 2s ease-in-out infinite !important;
+	}
+
+	/* Modern floating label tooltip */
+	:global(.floating-label-tooltip) {
+		background: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		pointer-events: none !important;
+	}
+
+	:global(.floating-label-tooltip .floating-label) {
+		position: relative;
+		display: inline-block;
+	}
+
+	:global(.floating-label-tooltip .floating-label-content) {
+		background: linear-gradient(135deg, #12121c, #1a1a28);
+		border: 2px solid var(--label-color, #00ffff);
+		border-radius: 8px;
+		padding: 8px 14px;
 		font-size: 13px;
+		font-weight: 600;
+		color: #f0f0f0;
 		white-space: nowrap;
-		pointer-events: none; /* Prevent tooltip from blocking marker clicks */
-		margin-bottom: 12px !important; /* Add spacing between tooltip and marker */
+		box-shadow: 
+			0 4px 12px rgba(0, 0, 0, 0.4),
+			0 0 20px var(--label-color, #00ffff);
+		backdrop-filter: blur(10px);
+		transform: translateY(-2px);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	:global(.leaflet-tooltip-top) {
-		margin-top: 0 !important;
+	:global(.floating-label-tooltip .floating-label-arrow) {
+		position: absolute;
+		bottom: -8px;
+		left: 50%;
+		transform: translateX(-50%) rotate(45deg);
+		width: 12px;
+		height: 12px;
+		background: #12121c;
+		border-right: 2px solid var(--label-color, #00ffff);
+		border-bottom: 2px solid var(--label-color, #00ffff);
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	}
 
-	:global(.leaflet-tooltip-top:before) {
-		border-top-color: white;
+	/* Modern popup styles */
+	:global(.modern-popup-container) {
+		background: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
 	}
 
-	:global(.leaflet-tooltip-bottom:before) {
-		border-bottom-color: white;
+	/* Ensure popup doesn't overflow viewport on mobile */
+	@media (max-width: 768px) {
+		:global(.leaflet-popup) {
+			max-width: calc(100vw - 20px) !important;
+		}
 	}
 
-	:global(.leaflet-tooltip-left:before) {
-		border-left-color: white;
+	:global(.modern-popup-container .leaflet-popup-content-wrapper) {
+		background: #12121c !important;
+		border: 2px solid #282837 !important;
+		border-radius: 0 !important;
+		padding: 0 !important;
+		box-shadow: 
+			0 10px 40px rgba(0, 0, 0, 0.6),
+			0 0 30px rgba(0, 255, 255, 0.2) !important;
+		max-width: 100vw !important;
 	}
 
-	:global(.leaflet-tooltip-right:before) {
-		border-right-color: white;
+	@media (max-width: 768px) {
+		:global(.modern-popup-container .leaflet-popup-content-wrapper) {
+			max-width: calc(100vw - 20px) !important;
+			margin: 10px !important;
+		}
+	}
+
+	:global(.modern-popup-container .leaflet-popup-content) {
+		margin: 0 !important;
+		padding: 0 !important;
+		width: auto !important;
+		min-width: 280px;
+		max-width: 400px;
+	}
+
+	@media (max-width: 768px) {
+		:global(.modern-popup-container .leaflet-popup-content) {
+			min-width: calc(100vw - 40px) !important;
+			max-width: calc(100vw - 40px) !important;
+		}
+	}
+
+	:global(.modern-popup) {
+		display: flex;
+		flex-direction: column;
+		max-height: min(70vh, 500px);
+		color: #f0f0f0;
+		font-family: 'Poppins', sans-serif;
+		overflow: hidden;
+	}
+
+	@media (max-width: 768px) {
+		:global(.modern-popup) {
+			max-height: min(75vh, 500px);
+		}
+	}
+
+	:global(.popup-fixed-header) {
+		padding: 24px 24px 0 24px;
+		flex-shrink: 0;
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-fixed-header) {
+			padding: 16px 16px 0 16px;
+		}
+	}
+
+	:global(.popup-header) {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #282837;
+		margin-bottom: 20px;
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-header) {
+			gap: 12px;
+			padding-bottom: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	:global(.popup-category-badge) {
+		width: 48px;
+		height: 48px;
+		border-radius: 8px;
+		border: 2px solid;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		box-shadow: 0 0 15px currentColor;
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-category-badge) {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	:global(.popup-category-info) {
+		flex: 1;
+	}
+
+	:global(.popup-category-label) {
+		font-size: 11px;
+		font-weight: 500;
+		color: #a0a0b0;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 4px;
+	}
+
+	:global(.popup-category-name) {
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	:global(.popup-title) {
+		font-size: 24px;
+		font-weight: 700;
+		color: #f0f0f0;
+		margin: 0 0 0 0;
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+		padding-bottom: 20px;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-title) {
+			font-size: 20px;
+			padding-bottom: 16px;
+		}
+	}
+
+	:global(.popup-scrollable-content) {
+		flex: 1;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding: 20px 24px 24px 24px;
+		/* Custom scrollbar styling */
+		scrollbar-width: thin;
+		scrollbar-color: #282837 #12121c;
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-scrollable-content) {
+			padding: 16px 16px 16px 16px;
+		}
+	}
+
+	:global(.popup-scrollable-content::-webkit-scrollbar) {
+		width: 8px;
+	}
+
+	:global(.popup-scrollable-content::-webkit-scrollbar-track) {
+		background: #12121c;
+	}
+
+	:global(.popup-scrollable-content::-webkit-scrollbar-thumb) {
+		background: #282837;
+		border-radius: 4px;
+	}
+
+	:global(.popup-scrollable-content::-webkit-scrollbar-thumb:hover) {
+		background: #00ffff;
+		box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+	}
+
+	:global(.popup-description) {
+		font-size: 15px;
+		line-height: 1.7;
+		color: #a0a0b0;
+		margin: 0 0 24px 0;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-description) {
+			font-size: 14px;
+			line-height: 1.6;
+			margin-bottom: 20px;
+		}
+	}
+
+	:global(.popup-navigation) {
+		margin-top: 24px;
+		padding-top: 24px;
+		border-top: 1px solid #282837;
+	}
+
+	:global(.popup-navigation-label) {
+		font-size: 11px;
+		font-weight: 500;
+		color: #a0a0b0;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 16px;
+	}
+
+	:global(.popup-navigation-links) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		align-items: center;
+	}
+
+	:global(.nav-text-link) {
+		display: inline-block;
+		padding: 6px 12px;
+		border: 1px solid #282837;
+		background: #08080c;
+		color: #a0a0b0;
+		font-size: 12px;
+		font-weight: 500;
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		text-decoration: none;
+		border-radius: 6px;
+		white-space: nowrap;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	:global(.nav-text-link:hover) {
+		border-color: #00ffff;
+		background: rgba(0, 255, 255, 0.1);
+		color: #00ffff;
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px rgba(0, 255, 255, 0.2);
+	}
+
+	@media (max-width: 768px) {
+		:global(.popup-navigation) {
+			margin-top: 20px;
+			padding-top: 20px;
+		}
+
+		:global(.popup-navigation-links) {
+			gap: 6px;
+		}
+
+		:global(.nav-text-link) {
+			font-size: 11px;
+			padding: 5px 10px;
+			white-space: normal;
+		}
+	}
+
+	:global(.modern-popup-container .leaflet-popup-close-button) {
+		color: #a0a0b0 !important;
+		font-size: 24px !important;
+		width: 32px !important;
+		height: 32px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		transition: all 0.3s !important;
+		z-index: 1000 !important;
+		position: absolute !important;
+		top: 8px !important;
+		right: 8px !important;
+	}
+
+	:global(.modern-popup-container .leaflet-popup-close-button:hover) {
+		color: #00ffff !important;
+		background: rgba(0, 255, 255, 0.1) !important;
+	}
+
+	@media (max-width: 768px) {
+		:global(.modern-popup-container .leaflet-popup-close-button) {
+			width: 40px !important;
+			height: 40px !important;
+			line-height: 40px !important;
+			font-size: 28px !important;
+			top: 4px !important;
+			right: 4px !important;
+			/* Ensure close button is always visible and tappable */
+			background: rgba(18, 18, 28, 0.9) !important;
+			border: 1px solid #282837 !important;
+		}
+	}
+
+	:global(.modern-popup-container .leaflet-popup-tip) {
+		background: #12121c !important;
+		border: 2px solid #282837 !important;
+		border-top: none !important;
+		border-left: none !important;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
 	}
 </style>

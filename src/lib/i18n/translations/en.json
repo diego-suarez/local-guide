@@ -9,7 +9,8 @@
 		"back": "Back",
 		"map": "Map",
 		"list": "List",
-		"about": "About"
+		"about": "About",
+		"goTo": "Go to"
 	},
 	"home": {
 		"title": "Local Guide",

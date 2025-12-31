@@ -40,7 +40,6 @@
 	let visibleCategories = $state(new Set<string>(Object.keys(categories)));
 	let mounted = $state(false);
 	let filtersExpanded = $state(false);
-	let detailsExpanded = $state(false);
 	let lang = $state(language);
 	let viewMode = $state<'map' | 'list'>('map');
 	let expandedCategories = $state(new Set<string>());
@@ -173,25 +172,13 @@
 
 	function selectPlaceFromList(place: Place) {
 		selectedPlace = place;
-		detailsExpanded = true;
-		// Scroll to details if on mobile
-		if (browser && window.innerWidth < 768) {
-			setTimeout(() => {
-				document.getElementById('place-details')?.scrollIntoView({ behavior: 'smooth' });
-			}, 100);
-		}
+		// Popup will be handled by the map component
 	}
 
 	onMount(() => {
 		mounted = true;
 	});
 
-	// Auto-expand details when place is selected
-	$effect(() => {
-		if (selectedPlace) {
-			detailsExpanded = true;
-		}
-	});
 </script>
 
 <svelte:head>
@@ -206,7 +193,7 @@
 	<div class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00ffff] to-transparent opacity-50"></div>
 
 	<!-- Header -->
-	<header class="container-wide py-6 flex justify-between items-center relative z-20 border-b border-[#282837] sticky top-0 bg-[#08080c]/95 backdrop-blur-sm">
+	<header class="container-wide py-4 md:py-6 flex justify-between items-center relative z-20 border-b border-[#282837] sticky top-0 bg-[#08080c]/95 backdrop-blur-sm">
 		<div>
 			<h1 class="heading-md text-white mb-1">{data.location.name}</h1>
 			<div class="text-[#ff00ff] text-sm font-medium">{data.location.country}</div>
@@ -225,7 +212,7 @@
 	</section>
 
 	<!-- View Toggle -->
-	<div class="container-wide py-6 relative z-10">
+	<div class="container-wide py-4 md:py-6 relative z-10">
 		<div class="flex items-center gap-2 border border-[#282837] bg-[#12121c] p-1 max-w-fit">
 			<button
 				onclick={() => viewMode = 'map'}
@@ -250,9 +237,9 @@
 
 	<!-- Map View -->
 	{#if viewMode === 'map'}
-		<div class="container-wide pb-12 relative z-10">
+		<div class="container-wide pb-6 md:pb-12 relative z-10">
 			<!-- Filters Panel - Above Map -->
-			<div class="panel-dark mb-6">
+			<div class="panel-dark mb-4 md:mb-6">
 				<!-- Filter Header -->
 				<button
 					onclick={() => filtersExpanded = !filtersExpanded}
@@ -346,73 +333,8 @@
 				{/if}
 			</div>
 
-			<!-- Place Details Panel -->
-			<div class="panel-dark">
-				<!-- Details Header -->
-				<button
-					onclick={() => detailsExpanded = !detailsExpanded}
-					class="w-full flex items-center justify-between mb-6 group"
-					disabled={!selectedPlace}
-				>
-					<div class="flex items-center gap-4">
-						<div class="w-10 h-10 border-2 border-[#ff00ff] flex items-center justify-center">
-							<Eye class="w-5 h-5 text-[#ff00ff]" />
-						</div>
-						<h2 class="text-xl font-bold text-white">
-							{selectedPlace ? getPlaceText(selectedPlace, 'title') : clickMarkerLabel}
-						</h2>
-					</div>
-					{#if selectedPlace}
-						<div class="w-8 h-8 border border-[#282837] flex items-center justify-center group-hover:border-[#ff00ff] transition-colors">
-							{#if detailsExpanded}
-								<ChevronUp class="w-4 h-4 text-[#a0a0b0]" />
-							{:else}
-								<ChevronDown class="w-4 h-4 text-[#a0a0b0]" />
-							{/if}
-						</div>
-					{/if}
-				</button>
-
-				<!-- Details Content -->
-				{#if selectedPlace && detailsExpanded}
-					{@const category = categories[selectedPlace.category]}
-					{@const Icon = iconMap[category.icon]}
-					<div id="place-details" class="animate-scale-in">
-						<!-- Category Badge -->
-						<div class="flex items-center gap-4 mb-8 pb-6 border-b border-[#282837]">
-							<div
-								class="w-16 h-16 border-2 flex items-center justify-center"
-								style="border-color: {category.color}"
-							>
-								{#if Icon}
-									<Icon class="w-8 h-8" style="color: {category.color}" />
-								{/if}
-							</div>
-							<div>
-								<div class="text-[#a0a0b0] text-xs font-medium mb-1">Category</div>
-								<div class="text-white font-semibold" style="color: {category.color}">
-									{getCategoryTranslation(selectedPlace.category)}
-								</div>
-							</div>
-						</div>
-
-						<!-- Title -->
-						<h3 class="heading-md text-white mb-6">
-							{getPlaceText(selectedPlace, 'title')}
-						</h3>
-
-						<!-- Description -->
-						<p class="text-[#a0a0b0] leading-relaxed text-lg">{getPlaceText(selectedPlace, 'description')}</p>
-					</div>
-				{:else if !selectedPlace}
-					<div class="flex flex-col items-center justify-center text-center py-16">
-						<div class="w-20 h-20 border-2 border-[#282837] flex items-center justify-center mb-6">
-							<Eye class="w-10 h-10 text-[#282837]" />
-						</div>
-						<p class="text-[#a0a0b0] text-lg">{clickMarkerLabel}</p>
-					</div>
-				{/if}
-			</div>
+			<!-- Place Details Panel - Hidden since popup handles details now -->
+			<!-- Removed: Details are now shown in modern popup when clicking markers -->
 		</div>
 
 	<!-- List View -->
@@ -488,9 +410,36 @@
 											<!-- Place Details -->
 											{#if isPlaceExpanded}
 												<div class="px-3 pb-3 animate-scale-in border-t border-[#282837] pt-3">
-													<p class="text-[#a0a0b0] leading-relaxed text-sm">
+													<p class="text-[#a0a0b0] leading-relaxed text-sm mb-4">
 														{getPlaceText(place, 'description')}
 													</p>
+													
+													<!-- Navigation Links -->
+													<div class="list-navigation">
+														<div class="list-navigation-label">
+															{lang === 'es' ? esTranslations.common.goTo : enTranslations.common.goTo}
+														</div>
+														<div class="list-navigation-links">
+															<a 
+																href="https://waze.com/ul?ll={place.coordinates[0]},{place.coordinates[1]}&navigate=yes" 
+																target="_blank" 
+																rel="noopener noreferrer" 
+																class="nav-text-link"
+															>Waze</a>
+															<a 
+																href="https://www.google.com/maps/dir/?api=1&destination={place.coordinates[0]},{place.coordinates[1]}" 
+																target="_blank" 
+																rel="noopener noreferrer" 
+																class="nav-text-link"
+															>Google Maps</a>
+															<a 
+																href="https://maps.apple.com/?daddr={place.coordinates[0]},{place.coordinates[1]}&dirflg=d" 
+																target="_blank" 
+																rel="noopener noreferrer" 
+																class="nav-text-link"
+															>Apple Maps</a>
+														</div>
+													</div>
 												</div>
 											{/if}
 										</div>
@@ -544,5 +493,60 @@
 
 	.animate-slide-up {
 		animation: slideUp 0.3s ease-out;
+	}
+
+	/* Navigation links styling for list view */
+	.list-navigation {
+		margin-top: 16px;
+		padding-top: 16px;
+		border-top: 1px solid #282837;
+	}
+
+	.list-navigation-label {
+		font-size: 10px;
+		font-weight: 500;
+		color: #a0a0b0;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 12px;
+	}
+
+	.list-navigation-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		align-items: center;
+	}
+
+	.list-navigation .nav-text-link {
+		display: inline-block;
+		padding: 5px 10px;
+		border: 1px solid #282837;
+		background: #08080c;
+		color: #a0a0b0;
+		font-size: 11px;
+		font-weight: 500;
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		text-decoration: none;
+		border-radius: 4px;
+		white-space: nowrap;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	.list-navigation .nav-text-link:hover {
+		border-color: #00ffff;
+		background: rgba(0, 255, 255, 0.1);
+		color: #00ffff;
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px rgba(0, 255, 255, 0.2);
+	}
+
+	@media (max-width: 480px) {
+		.list-navigation .nav-text-link {
+			font-size: 10px;
+			padding: 4px 8px;
+			white-space: normal;
+		}
 	}
 </style>
