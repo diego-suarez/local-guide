@@ -6,6 +6,7 @@
 	import { language } from '$lib/i18n';
 	import type { Language } from '$lib/i18n';
 	import { getPlaceText, getLocationDescription } from '$lib/utils/i18n';
+	import { normalizeInstagramUrl } from '$lib/utils/links';
 	import type { Place, Location, Categories } from '$lib/types';
 	import categoriesData from '$lib/data/categories.json';
 	import {
@@ -102,6 +103,10 @@
 		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.goTo;
 	});
+	const instagramLabel = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.common.instagram ?? 'Instagram';
+	});
 	const noPlacesMatchFiltersLabel = $derived.by(() => {
 		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.noPlacesMatchFilters;
@@ -197,6 +202,11 @@
 	function selectPlaceFromList(place: Place) {
 		selectedPlace = place;
 		// Popup will be handled by the map component
+	}
+
+	function getInstagramHref(place: Place): string | null {
+		if (!place.instagram) return null;
+		return normalizeInstagramUrl(place.instagram);
 	}
 
 	onMount(() => {
@@ -462,6 +472,14 @@
 																rel="noopener noreferrer" 
 																class="nav-text-link"
 															>Apple Maps</a>
+															{#if getInstagramHref(place)}
+																<a
+																	href={getInstagramHref(place) as string}
+																	target="_blank"
+																	rel="noopener noreferrer"
+																	class="nav-text-link"
+																>{instagramLabel}</a>
+															{/if}
 														</div>
 													</div>
 												</div>

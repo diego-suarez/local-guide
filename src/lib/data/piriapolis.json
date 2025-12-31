@@ -57,7 +57,8 @@
 			"pt": "Construído em 1897 por Francisco Piria, fundador de Piriápolis, este castelo exibe uma arquitetura eclética e símbolos alquímicos. Hoje funciona como museu, com informações sobre a vida de Piria e a história da cidade."
 		},
 		"category": "museum",
-		"coordinates": [-34.8286343,-55.2516936]
+		"coordinates": [-34.8286343,-55.2516936],
+		"instagram": "https://www.instagram.com/castillodepiria/"
 	},
 	{
 		"id": "fuente-toro",
@@ -192,7 +193,8 @@
 			"pt": "Construído por Francisco Piria e inaugurado em 24 de dezembro de 1930, o Hotel Argentino foi projetado pelo arquiteto francês Pierre Guichot para acomodar 1.200 hóspedes. Na época, estava entre os hotéis mais grandes e luxuosos da América do Sul. O edifício de seis andares mede 120 metros de largura por 70 metros de profundidade e contava com instalações avançadas para o período, incluindo talassoterapia com duchas e banheiras de água do mar quente e fria, uma seção de ginástica sueca e salões de cabeleireiro. Piria importou linho da Itália, louças da Alemanha, cristais da Tchecoslováquia e móveis da Áustria. Em 1942, o Estado uruguaio adquiriu o hotel e, em 1993, ele foi declarado Monumento Histórico Nacional. Hoje, segue em operação, preservando seu charme histórico enquanto oferece comodidades modernas."
 		},
 		"category": "museum",
-		"coordinates": [-34.8635555, -55.2790997]
+		"coordinates": [-34.8635555, -55.2790997],
+		"instagram": "https://www.instagram.com/argentinohotel/"
 	},
 	{
 		"id": "playa-san-francisco",
@@ -237,7 +239,8 @@
 			"pt": "Uma casa noturna na Rambla de los Ingleses, com clima vibrante, música ao vivo e pista de dança. É um ponto de encontro popular para quem quer curtir a noite em Piriápolis. O local oferece petiscos, várias bebidas (incluindo coquetéis e cervejas) e áreas internas e ao ar livre. Também tem acessibilidade para pessoas em cadeira de rodas."
 		},
 		"category": "entertainment",
-		"coordinates": [-34.8808395,-55.2788979]
+		"coordinates": [-34.8808395,-55.2788979],
+		"instagram": "larinconadanoctiluca"
 	},
 	{
 		"id": "el-beril",
@@ -252,7 +255,8 @@
 			"pt": "Um bar e restaurante na esquina da Avenida Central com a Rambla de los Ingleses, na região de Punta Fría. É conhecido por ter música ao vivo e uma seleção variada de doze cervejas artesanais na torneira. O ambiente é descontraído e familiar, com opções como entradas, hambúrgueres, pizzas e frutos do mar."
 		},
 		"category": "entertainment",
-		"coordinates": [-34.8888767,-55.2810299]
+		"coordinates": [-34.8888767,-55.2810299],
+		"instagram": "https://www.instagram.com/el.beril/"
 	},
 	{
 		"id": "puerto-piriapolis",

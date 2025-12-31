@@ -5,6 +5,7 @@
 	import type { Language } from '$lib/i18n';
 	import { getPlaceText } from '$lib/utils/i18n';
 	import type { Place } from '$lib/types';
+	import { normalizeInstagramUrl } from '$lib/utils/links';
 	import enTranslations from '$lib/i18n/translations/en.json';
 	import esTranslations from '$lib/i18n/translations/es.json';
 	import ptTranslations from '$lib/i18n/translations/pt.json';
@@ -83,6 +84,8 @@
 		const [lat, lng] = place.coordinates;
 		const goToLabel = translations.common.goTo;
 		const categoryLabel = translations.common.category;
+		const instagramUrl = place.instagram ? normalizeInstagramUrl(place.instagram) : null;
+		const instagramLabel = translations.common.instagram ?? 'Instagram';
 		
 		return `
 			<div class="modern-popup">
@@ -116,6 +119,7 @@
 							<a href="${getWazeUrl(lat, lng)}" target="_blank" rel="noopener noreferrer" class="nav-text-link">Waze</a>
 							<a href="${getGoogleMapsUrl(lat, lng)}" target="_blank" rel="noopener noreferrer" class="nav-text-link">Google Maps</a>
 							<a href="${getAppleMapsUrl(lat, lng)}" target="_blank" rel="noopener noreferrer" class="nav-text-link">Apple Maps</a>
+							${instagramUrl ? `<a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="nav-text-link">${instagramLabel}</a>` : ''}
 						</div>
 					</div>
 				</div>
