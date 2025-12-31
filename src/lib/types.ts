@@ -17,6 +17,12 @@ export interface Place {
 	description: string | { es: string; en: string; pt?: string };
 	category: string;
 	coordinates: [number, number]; // [lat, lng]
+	/**
+	 * Optional Instagram profile for this place.
+	 * Accepts either a full URL (https://www.instagram.com/<handle>/)
+	 * or a handle (e.g. "@myplace" or "myplace").
+	 */
+	instagram?: string;
 }
 
 export interface Categories {
