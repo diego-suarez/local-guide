@@ -88,8 +88,7 @@
 			"pt": "Instalado na antiga estação ferroviária, este museu exibe locomotivas históricas, vagões e equipamentos do início do século XX, refletindo a história do transporte da cidade."
 		},
 		"category": "museum",
-		"coordinates": [-34.8638963,-55.2776513],
-		"instagram": "https://www.instagram.com/museo_ferroviario/"
+		"coordinates": [-34.8638963,-55.2776513]
 	},
 	{
 		"id": "punta-colorada",
@@ -119,8 +118,7 @@
 			"pt": "Um edifício histórico de cassino que acrescenta charme à cidade. A área ao redor tem bares à beira-mar e uma vida noturna tranquila."
 		},
 		"category": "entertainment",
-		"coordinates": [-34.8630906,-55.2794539],
-		"instagram": "https://www.instagram.com/casino.argentino__/"
+		"coordinates": [-34.8630906,-55.2794539]
 	},
 	{
 		"id": "rambla-argentinos",
@@ -242,7 +240,7 @@
 		},
 		"category": "entertainment",
 		"coordinates": [-34.8808395,-55.2788979],
-		"instagram": "https://www.instagram.com/la.rinconada.piriapolis/"
+		"instagram": "larinconadanoctiluca"
 	},
 	{
 		"id": "el-beril",
