@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { getLocationById } from '$lib/utils';
 import type { PageLoad, EntryGenerator } from './$types';
+import type { Place } from '$lib/types';
 import piriapolisData from '$lib/data/piriapolis.json';
 import locationsData from '$lib/data/locations.json';
 
@@ -18,9 +19,9 @@ export const load: PageLoad = async ({ params }) => {
 	}
 
 	// Load location-specific places data
-	let places = [];
+	let places: Place[] = [];
 	if (params.location === 'piriapolis') {
-		places = piriapolisData;
+		places = piriapolisData as Place[];
 	}
 
 	return {
