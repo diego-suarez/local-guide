@@ -444,10 +444,6 @@
 											<!-- Place Details -->
 											{#if isPlaceExpanded}
 												<div class="px-3 pb-3 animate-scale-in border-t border-[#282837] pt-3">
-													<p class="text-[#a0a0b0] leading-relaxed text-sm mb-4">
-														{getPlaceText(place, 'description')}
-													</p>
-													
 													<!-- Navigation Links -->
 													<div class="list-navigation">
 														<div class="list-navigation-label">
@@ -477,11 +473,15 @@
 																	href={getInstagramHref(place) as string}
 																	target="_blank"
 																	rel="noopener noreferrer"
-																	class="nav-text-link"
+																	class="nav-text-link nav-text-link-instagram"
 																>{instagramLabel}</a>
 															{/if}
 														</div>
 													</div>
+													
+													<p class="text-[#a0a0b0] leading-relaxed text-sm mt-4">
+														{getPlaceText(place, 'description')}
+													</p>
 												</div>
 											{/if}
 										</div>
@@ -539,9 +539,9 @@
 
 	/* Navigation links styling for list view */
 	.list-navigation {
-		margin-top: 16px;
-		padding-top: 16px;
-		border-top: 1px solid #282837;
+		margin-bottom: 16px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #282837;
 	}
 
 	.list-navigation-label {
@@ -582,6 +582,19 @@
 		color: #00ffff;
 		transform: translateY(-1px);
 		box-shadow: 0 2px 8px rgba(0, 255, 255, 0.2);
+	}
+
+	.list-navigation .nav-text-link-instagram {
+		background: linear-gradient(45deg, #833AB4, #E1306C, #F77737);
+		border-color: #E1306C;
+		color: #ffffff;
+	}
+
+	.list-navigation .nav-text-link-instagram:hover {
+		background: linear-gradient(45deg, #9B4DD1, #F56040, #FCAF45);
+		border-color: #F56040;
+		color: #ffffff;
+		box-shadow: 0 2px 8px rgba(225, 48, 108, 0.4);
 	}
 
 	@media (max-width: 480px) {

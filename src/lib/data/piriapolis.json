@@ -347,5 +347,97 @@
 		},
 		"category": "beach",
 		"coordinates": [-34.7925, -55.3836]
+	},
+	{
+		"id": "rocco-cucina-italiana",
+		"title": {
+			"es": "Rocco Cucina Italiana",
+			"en": "Rocco Cucina Italiana",
+			"pt": "Rocco Cucina Italiana"
+		},
+		"description": {
+			"es": "Restaurante italiano auténtico ubicado a media cuadra de la rambla, en la casona de verano del maestro pizzero italiano Arcangelo Gantile. Dirigido por su hijo Doménico, ofrece cocina italiana auténtica con productos importados de Italia. El menú destaca por sus pastas, salsas y pizzas al estilo napolitano. El ambiente es acogedor, con los colores de la bandera italiana y la presencia de Rocco, un pequeño perro que saluda a los comensales. Durante la temporada de verano, abre todos los días de 19:30 a 01:00 horas.",
+			"en": "Authentic Italian restaurant located half a block from the promenade, in the summer house of Italian master pizza maker Arcangelo Gantile. Run by his son Doménico, it offers authentic Italian cuisine with imported products from Italy. The menu features pasta, sauces, and Neapolitan-style pizzas. The atmosphere is cozy, with Italian flag colors and the presence of Rocco, a small dog that greets diners. During the summer season, it's open daily from 7:30 PM to 1:00 AM.",
+			"pt": "Restaurante italiano autêntico a meia quadra da orla, na casa de verão do mestre pizzaiolo italiano Arcangelo Gantile. Dirigido por seu filho Doménico, oferece culinária italiana autêntica com produtos importados da Itália. O cardápio destaca massas, molhos e pizzas no estilo napolitano. O ambiente é aconchegante, com as cores da bandeira italiana e a presença de Rocco, um pequeno cão que recebe os clientes. Durante a temporada de verão, abre todos os dias das 19:30 às 01:00."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8685297, -55.2747005],
+		"instagram": "https://www.instagram.com/roccoscucinaitaliana/"
+	},
+	{
+		"id": "terranova",
+		"title": {
+			"es": "Terranova",
+			"en": "Terranova",
+			"pt": "Terranova"
+		},
+		"description": {
+			"es": "Restaurante ubicado en la Rambla de los Argentinos que ofrece una variedad de platos tradicionales con un toque moderno. Su menú incluye especialidades como carnes al estilo uruguayo (asados, milanesas napolitanas), pastas artesanales (ravioles, ñoquis, lasaña), pescados y mariscos (merluza a la plancha, paella, calamares rellenos), opciones vegetarianas (risottos, ensaladas gourmet) y postres caseros. El restaurante es conocido por su ambiente acogedor y su servicio amable.",
+			"en": "Restaurant located on Rambla de los Argentinos offering a variety of traditional dishes with a modern touch. Its menu includes specialties such as Uruguayan-style meats (asados, milanesas napolitanas), artisanal pastas (ravioli, gnocchi, lasagna), fish and seafood (grilled hake, paella, stuffed squid), vegetarian options (risottos, gourmet salads), and homemade desserts. The restaurant is known for its cozy atmosphere and friendly service.",
+			"pt": "Restaurante na Rambla de los Argentinos que oferece uma variedade de pratos tradicionais com toque moderno. O cardápio inclui especialidades como carnes ao estilo uruguaio (churrascos, milanesas napolitanas), massas artesanais (ravioli, nhoque, lasanha), peixes e frutos do mar (pescada grelhada, paella, lulas recheadas), opções vegetarianas (risottos, saladas gourmet) e sobremesas caseiras. O restaurante é conhecido pelo ambiente aconchegante e serviço amigável."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8678013, -55.275986]
+	},
+	{
+		"id": "kraken",
+		"title": {
+			"es": "Kraken",
+			"en": "Kraken",
+			"pt": "Kraken"
+		},
+		"description": {
+			"es": "Restaurante y bar icónico ubicado en la Rambla de los Ingleses esquina Manuel Montes de Oca, en la zona de Punta Fría. Ofrece una fusión de cocina de mar y tierra, destacándose por sus especialidades en mariscos y sushi. Entre sus platos destacados se encuentran pulpo grillado, ceviche fresco, rabas crocantes, tablas para compartir, hamburguesas gourmet, pizzas artesanales al horno de piedra y una exclusiva coctelería inspirada en el mar. Cuenta con terraza al aire libre con vista al mar y música en vivo los fines de semana. Ofrece opciones vegetarianas y veganas.",
+			"en": "Iconic restaurant and bar located at Rambla de los Ingleses corner Manuel Montes de Oca, in the Punta Fría area. It offers a fusion of sea and land cuisine, standing out for its specialties in seafood and sushi. Among its featured dishes are grilled octopus, fresh ceviche, crispy calamari, sharing platters, gourmet burgers, artisanal stone-baked pizzas, and an exclusive cocktail menu inspired by the sea. It features an outdoor terrace with sea views and live music on weekends. Offers vegetarian and vegan options.",
+			"pt": "Restaurante e bar icônico na Rambla de los Ingleses, esquina com Manuel Montes de Oca, na região de Punta Fría. Oferece uma fusão de culinária do mar e da terra, destacando-se por especialidades em frutos do mar e sushi. Entre os pratos em destaque estão polvo grelhado, ceviche fresco, lulas crocantes, tabuas para compartilhar, hambúrgueres gourmet, pizzas artesanais assadas em forno de pedra e uma coquetelaria exclusiva inspirada no mar. Tem terraço ao ar livre com vista para o mar e música ao vivo nos fins de semana. Oferece opções vegetarianas e veganas."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8858717, -55.2807274]
+	},
+	{
+		"id": "ocho-nudos",
+		"title": {
+			"es": "Ocho Nudos",
+			"en": "Ocho Nudos",
+			"pt": "Ocho Nudos"
+		},
+		"description": {
+			"es": "Restaurante de cocina de autor ubicado en la Rambla de los Ingleses esquina Suipacha. Ofrece una propuesta gastronómica que combina influencias mediterráneas y locales, con un menú que varía según la temporada para garantizar la frescura de los ingredientes. Entre las opciones del menú se incluyen carnes, hamburguesas, chivitos, milanesas, pastas, pizzas, pokes y bocatas. El restaurante ofrece opciones para veganos, vegetarianos y personas celíacas, lo que lo convierte en una elección inclusiva. El ambiente es encantador, con decoración que mezcla lo moderno con lo rústico y ofrece vistas espectaculares al mar.",
+			"en": "Author cuisine restaurant located at Rambla de los Ingleses corner Suipacha. It offers a gastronomic proposal that combines Mediterranean and local influences, with a menu that varies according to the season to ensure ingredient freshness. Menu options include meats, burgers, chivitos, milanesas, pastas, pizzas, pokes, and bocatas. The restaurant offers options for vegans, vegetarians, and people with celiac disease, making it an inclusive choice. The atmosphere is charming, with decoration that mixes modern with rustic and offers spectacular sea views.",
+			"pt": "Restaurante de cozinha autoral na Rambla de los Ingleses, esquina com Suipacha. Oferece uma proposta gastronômica que combina influências mediterrâneas e locais, com cardápio que varia conforme a temporada para garantir a frescura dos ingredientes. As opções do cardápio incluem carnes, hambúrgueres, chivitos, milanesas, massas, pizzas, pokes e bocatas. O restaurante oferece opções para veganos, vegetarianos e pessoas celíacas, tornando-se uma escolha inclusiva. O ambiente é encantador, com decoração que mistura moderno e rústico e oferece vistas espetaculares para o mar."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8726166,-55.2768192],
+		"instagram": "https://www.instagram.com/ochonudos.uy/"
+	},
+	{
+		"id": "zetape-pizzetas",
+		"title": {
+			"es": "Zetapé Pizzetas",
+			"en": "Zetapé Pizzetas",
+			"pt": "Zetapé Pizzetas"
+		},
+		"description": {
+			"es": "Pizzería ubicada en la intersección de las calles Misiones y Julián Álvarez, reconocida por sus pizzetas artesanales de masa fina e ingredientes frescos. El restaurante cuenta con una decoración acogedora, incluyendo sofás cómodos y una atractiva carta de cócteles caseros. Además, dispone de mesas al aire libre para disfrutar de una comida al fresco. El horario de atención es de jueves a domingo, de 20:00 a 00:00 horas.",
+			"en": "Pizzeria located at the intersection of Misiones and Julián Álvarez streets, recognized for its artisanal thin-crust pizzetas and fresh ingredients. The restaurant features cozy decoration, including comfortable sofas and an attractive menu of homemade cocktails. It also has outdoor tables to enjoy a meal in the fresh air. Opening hours are Thursday to Sunday, from 8:00 PM to 12:00 AM.",
+			"pt": "Pizzaria na esquina das ruas Misiones e Julián Álvarez, reconhecida por suas pizzetas artesanais de massa fina e ingredientes frescos. O restaurante tem decoração aconchegante, incluindo sofás confortáveis e um cardápio atraente de coquetéis caseiros. Além disso, dispõe de mesas ao ar livre para desfrutar de uma refeição ao ar livre. O horário de funcionamento é de quinta a domingo, das 20:00 às 00:00."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8551229,-55.2849432]
+	},
+	{
+		"id": "puertito-don-anselmo",
+		"title": {
+			"es": "Puertito Don Anselmo",
+			"en": "Puertito Don Anselmo",
+			"pt": "Puertito Don Anselmo"
+		},
+		"description": {
+			"es": "Restaurante especializado en pescados y mariscos ubicado en Punta Fría, sobre las rocas y a pocos metros del mar. Ofrece una amplia cocina tradicional y es famoso por su paella, que es uno de los platos típicos de Piriápolis. La paella para dos personas es generosa y puede alcanzar para cuatro. El restaurante está abierto todo el año y ofrece un ambiente relajado y acogedor, ideal para disfrutar en familia. Además, cuenta con una barra de ensaladas para acompañar las comidas.",
+			"en": "Restaurant specialized in fish and seafood located in Punta Fría, on the rocks and just a few meters from the sea. It offers a wide traditional cuisine and is famous for its paella, which is one of the typical dishes of Piriápolis. The paella for two people is generous and can serve four. The restaurant is open year-round and offers a relaxed and cozy atmosphere, ideal for family enjoyment. It also features a salad bar to accompany meals.",
+			"pt": "Restaurante especializado em peixes e frutos do mar localizado em Punta Fría, sobre as rochas e a poucos metros do mar. Oferece uma ampla culinária tradicional e é famoso por sua paella, que é um dos pratos típicos de Piriápolis. A paella para duas pessoas é generosa e pode servir quatro. O restaurante está aberto o ano todo e oferece um ambiente relaxado e aconchegante, ideal para desfrutar em família. Além disso, conta com uma barra de saladas para acompanhar as refeições."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8875, -55.2814]
 	}
 ]
