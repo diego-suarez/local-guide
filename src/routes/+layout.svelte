@@ -1,10 +1,14 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import '../app.css';
+	import PlacePopup from '$lib/components/PlacePopup.svelte';
+	import categoriesData from '$lib/data/categories.json';
+	import type { Categories } from '$lib/types';
 
 	export const prerender = true;
 
 	let { children } = $props();
+	const categories: Categories = categoriesData as Categories;
 </script>
 
 <svelte:head>
@@ -15,3 +19,5 @@
 </svelte:head>
 
 {@render children()}
+
+<PlacePopup {categories} />
