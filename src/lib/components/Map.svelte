@@ -2,10 +2,12 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { language } from '$lib/i18n';
+	import type { Language } from '$lib/i18n';
 	import { getPlaceText } from '$lib/utils/i18n';
 	import type { Place } from '$lib/types';
 	import enTranslations from '$lib/i18n/translations/en.json';
 	import esTranslations from '$lib/i18n/translations/es.json';
+	import ptTranslations from '$lib/i18n/translations/pt.json';
 
 	// Helper functions to generate navigation URLs
 	function getWazeUrl(lat: number, lng: number): string {
@@ -40,12 +42,18 @@
 	let map: any;
 	let markers: Map<string, any> = new Map();
 	let L: any;
-	let currentLang = $state(language);
+	let currentLang = $state<Language>('es');
 	let isInitialLoad = $state(true);
 
 	language.subscribe((value) => {
 		currentLang = value;
 	});
+
+	const translationsByLang = {
+		es: esTranslations,
+		en: enTranslations,
+		pt: ptTranslations
+	} as const;
 
 	// Icon SVG paths mapping (matching lucide-svelte icons)
 	const iconPaths: Record<string, string> = {
@@ -61,18 +69,20 @@
 
 	// Helper to get category translation
 	function getCategoryTranslation(categoryKey: string): string {
-		const translations = currentLang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[currentLang] ?? translationsByLang.es;
 		return translations.categories[categoryKey as keyof typeof translations.categories] || categoryKey;
 	}
 
 	// Create modern popup HTML for place details
 	function createPopupContent(place: Place, category: { icon: string; color: string }): string {
+		const translations = translationsByLang[currentLang] ?? translationsByLang.es;
 		const iconPath = iconPaths[category.icon] || '';
 		const placeTitle = getPlaceText(place, 'title');
 		const placeDescription = getPlaceText(place, 'description');
 		const categoryName = getCategoryTranslation(place.category);
 		const [lat, lng] = place.coordinates;
-		const goToLabel = currentLang === 'es' ? esTranslations.common.goTo : enTranslations.common.goTo;
+		const goToLabel = translations.common.goTo;
+		const categoryLabel = translations.common.category;
 		
 		return `
 			<div class="modern-popup">
@@ -86,7 +96,7 @@
 							</svg>
 						</div>
 						<div class="popup-category-info">
-							<div class="popup-category-label">Category</div>
+							<div class="popup-category-label">${categoryLabel}</div>
 							<div class="popup-category-name" style="color: ${category.color};">${categoryName}</div>
 						</div>
 					</div>
@@ -270,23 +280,24 @@
 			})
 				.addTo(map)
 				.bindTooltip(tooltip)
-				.bindPopup(popup)
-				.on('click', function(e) {
-					e.originalEvent.stopPropagation();
-					selectedPlace = place; // Keep for highlighting
-					this.openPopup();
-				})
-				.on('mouseover', function () {
-					this.openTooltip();
-					this.setZIndexOffset(2000);
-				})
-				.on('mouseout', function () {
-					this.closeTooltip();
-					// Only reset z-index if not selected
-					if (!selectedPlace || selectedPlace.id !== place.id) {
-						this.setZIndexOffset(1000);
-					}
-				});
+				.bindPopup(popup);
+
+			marker.on('click', (e: any) => {
+				e?.originalEvent?.stopPropagation?.();
+				selectedPlace = place; // Keep for highlighting
+				marker.openPopup();
+			});
+			marker.on('mouseover', () => {
+				marker.openTooltip();
+				marker.setZIndexOffset(2000);
+			});
+			marker.on('mouseout', () => {
+				marker.closeTooltip();
+				// Only reset z-index if not selected
+				if (!selectedPlace || selectedPlace.id !== place.id) {
+					marker.setZIndexOffset(1000);
+				}
+			});
 
 			markers.set(place.id, marker);
 		});

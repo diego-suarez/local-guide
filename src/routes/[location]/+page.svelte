@@ -3,7 +3,8 @@
 	import { browser } from '$app/environment';
 	import Map from '$lib/components/Map.svelte';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
-	import { t, language } from '$lib/i18n';
+	import { language } from '$lib/i18n';
+	import type { Language } from '$lib/i18n';
 	import { getPlaceText, getLocationDescription } from '$lib/utils/i18n';
 	import type { Place, Location, Categories } from '$lib/types';
 	import categoriesData from '$lib/data/categories.json';
@@ -40,7 +41,7 @@
 	let visibleCategories = $state(new Set<string>(Object.keys(categories)));
 	let mounted = $state(false);
 	let filtersExpanded = $state(false);
-	let lang = $state(language);
+	let lang = $state<Language>('es');
 	let viewMode = $state<'map' | 'list'>('list');
 	let expandedCategories = $state(new Set<string>());
 	let expandedPlaces = $state(new Set<string>());
@@ -52,39 +53,62 @@
 	// Import translations directly for reactive access
 	import esTranslations from '$lib/i18n/translations/es.json';
 	import enTranslations from '$lib/i18n/translations/en.json';
+	import ptTranslations from '$lib/i18n/translations/pt.json';
+
+	const translationsByLang = {
+		es: esTranslations,
+		en: enTranslations,
+		pt: ptTranslations
+	} as const;
 
 	// Reactive translations - these update when lang changes
 	const filtersLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.filters;
 	});
 	const placesLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.places;
 	});
 	const selectAllLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.selectAll;
 	});
 	const clearLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.clear;
 	});
 	const clickMarkerLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.clickMarker;
 	});
 	const mapLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.map;
 	});
 	const listLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.list;
 	});
 	const aboutLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.about;
+	});
+	const homeTitle = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.home.title;
+	});
+	const goToLabel = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.common.goTo;
+	});
+	const noPlacesMatchFiltersLabel = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.common.noPlacesMatchFilters;
+	});
+	const noCategoriesToDisplayLabel = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.common.noCategoriesToDisplay;
 	});
 	
 	// Reactive location description - updates when language changes
@@ -101,7 +125,7 @@
 	// Reactive category translation helper
 	// This function is reactive because it uses the reactive `lang` variable
 	function getCategoryTranslation(categoryKey: string): string {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.categories[categoryKey as keyof typeof translations.categories] || categoryKey;
 	}
 
@@ -182,7 +206,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.location.name} - {lang === 'es' ? 'Guía Local' : 'Local Guide'}</title>
+	<title>{data.location.name} - {homeTitle}</title>
 </svelte:head>
 
 <div class="min-h-screen bg-[#08080c] relative overflow-hidden">
@@ -417,7 +441,7 @@
 													<!-- Navigation Links -->
 													<div class="list-navigation">
 														<div class="list-navigation-label">
-															{lang === 'es' ? esTranslations.common.goTo : enTranslations.common.goTo}
+															{goToLabel}
 														</div>
 														<div class="list-navigation-links">
 															<a 
@@ -454,8 +478,8 @@
 					<div class="panel-dark text-center py-16">
 						<p class="text-[#a0a0b0] text-lg">
 							{visiblePlaces.length === 0
-								? 'No places match the current filters. Try adjusting your filters.'
-								: 'No categories to display.'}
+								? noPlacesMatchFiltersLabel
+								: noCategoriesToDisplayLabel}
 						</p>
 					</div>
 				{/if}

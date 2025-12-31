@@ -3,11 +3,13 @@
 		"id": "piriapolis-beach",
 		"title": {
 			"es": "Playa de Piriápolis",
-			"en": "Piriápolis Beach"
+			"en": "Piriápolis Beach",
+			"pt": "Praia de Piriápolis"
 		},
 		"description": {
 			"es": "La playa principal del pueblo es un punto focal para la relajación y los deportes acuáticos. Las arenas blancas y limpias y las aguas cálidas la hacen ideal para nadar, tomar sol y juegos en la playa. La adyacente Rambla de los Argentinos es perfecta para paseos tranquilos, ofreciendo vistas pintorescas de la costa.",
-			"en": "The town's main beach is a focal point for relaxation and water sports. The clean, white sands and warm waters make it ideal for swimming, sunbathing, and beach games. The adjacent Rambla de los Argentinos is perfect for leisurely strolls, offering picturesque views of the coastline."
+			"en": "The town's main beach is a focal point for relaxation and water sports. The clean, white sands and warm waters make it ideal for swimming, sunbathing, and beach games. The adjacent Rambla de los Argentinos is perfect for leisurely strolls, offering picturesque views of the coastline.",
+			"pt": "A principal praia da cidade é um ponto central para relaxar e praticar esportes aquáticos. As areias claras e limpas e as águas mornas a tornam ideal para nadar, tomar sol e brincar na areia. A vizinha Rambla de los Argentinos é perfeita para caminhadas tranquilas, com vistas pitorescas da orla."
 		},
 		"category": "beach",
 		"coordinates": [-34.8697722,-55.2760216]
@@ -16,11 +18,13 @@
 		"id": "cerro-san-antonio",
 		"title": {
 			"es": "Cerro San Antonio",
-			"en": "Cerro San Antonio"
+			"en": "Cerro San Antonio",
+			"pt": "Cerro San Antonio"
 		},
 		"description": {
 			"es": "Esta colina de 130 metros ofrece vistas panorámicas de Piriápolis y las áreas circundantes. Los visitantes pueden llegar a la cima en auto, a pie o mediante un teleférico. En la parte superior, encontrarás una pequeña capilla dedicada a San Antonio y una estatua de la Virgen Stella Maris.",
-			"en": "This 130-meter hill provides panoramic views of Piriápolis and the surrounding areas. Visitors can reach the summit by car, on foot, or via a chairlift. At the top, you'll find a small chapel dedicated to Saint Anthony and a statue of the Virgin Stella Maris."
+			"en": "This 130-meter hill provides panoramic views of Piriápolis and the surrounding areas. Visitors can reach the summit by car, on foot, or via a chairlift. At the top, you'll find a small chapel dedicated to Saint Anthony and a statue of the Virgin Stella Maris.",
+			"pt": "Este morro de 130 metros oferece vistas panorâmicas de Piriápolis e arredores. É possível chegar ao topo de carro, a pé ou por teleférico. Lá em cima, você encontra uma pequena capela dedicada a Santo Antônio e uma estátua da Virgem Stella Maris."
 		},
 		"category": "viewpoint",
 		"coordinates": [-34.8780, -55.2740]
@@ -29,11 +33,13 @@
 		"id": "cerro-pan-azucar",
 		"title": {
 			"es": "Cerro Pan de Azúcar",
-			"en": "Cerro Pan de Azúcar"
+			"en": "Cerro Pan de Azúcar",
+			"pt": "Cerro Pan de Azúcar"
 		},
 		"description": {
 			"es": "Con 423 metros de altura, el Cerro Pan de Azúcar es uno de los puntos más altos de Uruguay. Caminar hasta la cima recompensa a los aventureros con vistas impresionantes. En la base, la Reserva de Flora y Fauna del Pan de Azúcar alberga vida silvestre nativa, incluyendo carpinchos y pumas.",
-			"en": "Standing at 423 meters, Cerro Pan de Azúcar is one of Uruguay's highest points. Hiking to the summit rewards adventurers with breathtaking views. At the base, the Reserva de Flora y Fauna del Pan de Azúcar houses native wildlife, including capybaras and pumas."
+			"en": "Standing at 423 meters, Cerro Pan de Azúcar is one of Uruguay's highest points. Hiking to the summit rewards adventurers with breathtaking views. At the base, the Reserva de Flora y Fauna del Pan de Azúcar houses native wildlife, including capybaras and pumas.",
+			"pt": "Com 423 metros de altura, o Cerro Pan de Azúcar é um dos pontos mais altos do Uruguai. A caminhada até o topo recompensa os aventureiros com vistas deslumbrantes. Na base, a Reserva de Flora e Fauna do Pan de Azúcar abriga vida selvagem nativa, incluindo capivaras e pumas."
 		},
 		"category": "hiking",
 		"coordinates": [-34.8102032,-55.2592487]
@@ -42,11 +48,13 @@
 		"id": "castillo-piria",
 		"title": {
 			"es": "Castillo de Piria",
-			"en": "Castillo de Piria"
+			"en": "Castillo de Piria",
+			"pt": "Castillo de Piria"
 		},
 		"description": {
 			"es": "Construido en 1897 por Francisco Piria, el fundador de Piriápolis, este castillo muestra una arquitectura ecléctica y símbolos alquímicos. Ahora es un museo que ofrece información sobre la vida de Piria y la historia del pueblo.",
-			"en": "Built in 1897 by Francisco Piria, the founder of Piriápolis, this castle showcases eclectic architecture and alchemical symbols. Now a museum, it offers insights into Piria's life and the town's history."
+			"en": "Built in 1897 by Francisco Piria, the founder of Piriápolis, this castle showcases eclectic architecture and alchemical symbols. Now a museum, it offers insights into Piria's life and the town's history.",
+			"pt": "Construído em 1897 por Francisco Piria, fundador de Piriápolis, este castelo exibe uma arquitetura eclética e símbolos alquímicos. Hoje funciona como museu, com informações sobre a vida de Piria e a história da cidade."
 		},
 		"category": "museum",
 		"coordinates": [-34.8286343,-55.2516936]
@@ -55,11 +63,13 @@
 		"id": "fuente-toro",
 		"title": {
 			"es": "Fuente del Toro",
-			"en": "Fuente del Toro"
+			"en": "Fuente del Toro",
+			"pt": "Fuente del Toro"
 		},
 		"description": {
 			"es": "Ubicada en las laderas del Cerro del Toro, esta estatua de bronce de un toro tiene un manantial natural que fluye de su boca. El sitio está rodeado de vegetación exuberante y ofrece un lugar sereno para los visitantes.",
-			"en": "Located on the slopes of Cerro del Toro, this bronze statue of a bull has a natural spring flowing from its mouth. The site is surrounded by lush vegetation and offers a serene spot for visitors."
+			"en": "Located on the slopes of Cerro del Toro, this bronze statue of a bull has a natural spring flowing from its mouth. The site is surrounded by lush vegetation and offers a serene spot for visitors.",
+			"pt": "Localizada nas encostas do Cerro del Toro, esta estátua de bronze de um touro tem uma nascente natural que jorra pela boca. O lugar é cercado por vegetação exuberante e oferece um refúgio tranquilo para visitantes."
 		},
 		"category": "nature",
 		"coordinates": [-34.8656104,-55.2603336]
@@ -68,11 +78,13 @@
 		"id": "museo-ferroviario",
 		"title": {
 			"es": "Museo Ferroviario",
-			"en": "Museo Ferroviario"
+			"en": "Museo Ferroviario",
+			"pt": "Museo Ferroviario"
 		},
 		"description": {
 			"es": "Ubicado en la estación de ferrocarril original, este museo exhibe locomotoras históricas, vagones y equipos de principios del siglo XX, reflejando la historia del transporte del pueblo.",
-			"en": "Housed in the original railway station, this museum displays historic locomotives, carriages, and equipment from the early 20th century, reflecting the town's transportation history."
+			"en": "Housed in the original railway station, this museum displays historic locomotives, carriages, and equipment from the early 20th century, reflecting the town's transportation history.",
+			"pt": "Instalado na antiga estação ferroviária, este museu exibe locomotivas históricas, vagões e equipamentos do início do século XX, refletindo a história do transporte da cidade."
 		},
 		"category": "museum",
 		"coordinates": [-34.8638963,-55.2776513]
@@ -81,11 +93,13 @@
 		"id": "punta-colorada",
 		"title": {
 			"es": "Punta Colorada",
-			"en": "Punta Colorada"
+			"en": "Punta Colorada",
+			"pt": "Punta Colorada"
 		},
 		"description": {
 			"es": "Una pequeña área de playa conocida por sus aguas tranquilas y dunas, Punta Colorada también es un lugar popular para pescar con hermosos paisajes naturales.",
-			"en": "A small beach area known for its calm waters and dunes, Punta Colorada is also a popular fishing spot with beautiful natural scenery."
+			"en": "A small beach area known for its calm waters and dunes, Punta Colorada is also a popular fishing spot with beautiful natural scenery.",
+			"pt": "Uma pequena área de praia conhecida por suas águas calmas e dunas. Punta Colorada também é um ponto popular para pesca, com belas paisagens naturais."
 		},
 		"category": "beach",
 		"coordinates": [-34.9008583,-55.2582281]
@@ -94,11 +108,13 @@
 		"id": "casino-argentino",
 		"title": {
 			"es": "Casino Argentino",
-			"en": "Casino Argentino"
+			"en": "Casino Argentino",
+			"pt": "Casino Argentino"
 		},
 		"description": {
 			"es": "Edificio histórico del casino que añade encanto al pueblo. El área a su alrededor cuenta con bares frente al mar y una escena nocturna relajada.",
-			"en": "Historic casino building that adds to the town's charm. The area around it features beachfront bars and a relaxed nightlife scene."
+			"en": "Historic casino building that adds to the town's charm. The area around it features beachfront bars and a relaxed nightlife scene.",
+			"pt": "Um edifício histórico de cassino que acrescenta charme à cidade. A área ao redor tem bares à beira-mar e uma vida noturna tranquila."
 		},
 		"category": "entertainment",
 		"coordinates": [-34.8630906,-55.2794539]
@@ -107,11 +123,13 @@
 		"id": "rambla-argentinos",
 		"title": {
 			"es": "Rambla de los Argentinos",
-			"en": "Rambla de los Argentinos"
+			"en": "Rambla de los Argentinos",
+			"pt": "Rambla de los Argentinos"
 		},
 		"description": {
 			"es": "Un hermoso paseo marítimo perfecto para caminatas tranquilas, jogging o simplemente disfrutar de las vistas pintorescas de la costa y el mar.",
-			"en": "A beautiful waterfront promenade perfect for leisurely strolls, jogging, or simply enjoying the picturesque views of the coastline and the sea."
+			"en": "A beautiful waterfront promenade perfect for leisurely strolls, jogging, or simply enjoying the picturesque views of the coastline and the sea.",
+			"pt": "Um belo calçadão à beira-mar, perfeito para caminhadas tranquilas, corrida ou simplesmente apreciar as vistas pitorescas da costa e do mar."
 		},
 		"category": "activity",
 		"coordinates": [-34.8676374,-55.2762798]
@@ -120,11 +138,13 @@
 		"id": "cerro-del-toro",
 		"title": {
 			"es": "Cerro del Toro",
-			"en": "Cerro del Toro"
+			"en": "Cerro del Toro",
+			"pt": "Cerro del Toro"
 		},
 		"description": {
 			"es": "Una colina escénica que ofrece senderos para caminar y belleza natural. El área es conocida por su vegetación exuberante y la famosa estatua de la Fuente del Toro.",
-			"en": "A scenic hill offering hiking trails and natural beauty. The area is known for its lush vegetation and the famous Fuente del Toro statue."
+			"en": "A scenic hill offering hiking trails and natural beauty. The area is known for its lush vegetation and the famous Fuente del Toro statue.",
+			"pt": "Um morro cênico com trilhas e muita beleza natural. A área é conhecida pela vegetação exuberante e pela famosa estátua da Fuente del Toro."
 		},
 		"category": "hiking",
 		"coordinates": [-34.8622965,-55.2576431]
@@ -133,11 +153,13 @@
 		"id": "plaza-artigas",
 		"title": {
 			"es": "Plaza Artigas",
-			"en": "Plaza Artigas"
+			"en": "Plaza Artigas",
+			"pt": "Plaza Artigas"
 		},
 		"description": {
 			"es": "La plaza principal de Piriápolis, un lugar de reunión central rodeado de tiendas, cafés y restaurantes. Un gran punto de partida para explorar el pueblo.",
-			"en": "The main square of Piriápolis, a central gathering place surrounded by shops, cafes, and restaurants. A great starting point for exploring the town."
+			"en": "The main square of Piriápolis, a central gathering place surrounded by shops, cafes, and restaurants. A great starting point for exploring the town.",
+			"pt": "A praça principal de Piriápolis, um ponto de encontro central cercado por lojas, cafés e restaurantes. Um ótimo ponto de partida para explorar a cidade."
 		},
 		"category": "activity",
 		"coordinates": [-34.8633614,-55.2761403]
@@ -146,11 +168,13 @@
 		"id": "fuente-venus",
 		"title": {
 			"es": "Fuente de Venus",
-			"en": "Fuente de Venus"
+			"en": "Fuente de Venus",
+			"pt": "Fuente de Venus"
 		},
 		"description": {
 			"es": "Una fuente de estilo clásico que presenta una estatua de Venus, rodeada de un parque con bancos y setos recortados. Encargada por Francisco Piria, refleja el patrimonio arquitectónico de la ciudad.",
-			"en": "A classical-style fountain featuring a statue of Venus, surrounded by a park with benches and trimmed hedges. Commissioned by Francisco Piria, it reflects the city's architectural heritage."
+			"en": "A classical-style fountain featuring a statue of Venus, surrounded by a park with benches and trimmed hedges. Commissioned by Francisco Piria, it reflects the city's architectural heritage.",
+			"pt": "Uma fonte de estilo clássico com uma estátua de Vênus, cercada por um parque com bancos e sebes aparadas. Encomendada por Francisco Piria, reflete o patrimônio arquitetônico da cidade."
 		},
 		"category": "nature",
 		"coordinates": [-34.8707266,-55.2637698]
@@ -159,11 +183,13 @@
 		"id": "hotel-argentino",
 		"title": {
 			"es": "Hotel Argentino",
-			"en": "Hotel Argentino"
+			"en": "Hotel Argentino",
+			"pt": "Hotel Argentino"
 		},
 		"description": {
 			"es": "Construido por Francisco Piria e inaugurado el 24 de diciembre de 1930, el Hotel Argentino fue diseñado por el arquitecto francés Pierre Guichot para albergar 1.200 huéspedes. En su momento, fue uno de los hoteles más grandes y lujosos de Sudamérica. El edificio de seis pisos mide 120 metros de ancho por 70 metros de profundidad y contaba con instalaciones avanzadas para su época, incluyendo talasoterapia con duchas y bañeras de agua de mar caliente y fría, una sección de gimnasia sueca y salones de peluquería. Piria importó lino de Italia, vajilla de Alemania, cristalería de Checoslovaquia y muebles de Austria. En 1942, el estado uruguayo adquirió el hotel, y en 1993 fue declarado Monumento Histórico Nacional. Hoy continúa operando, preservando su encanto histórico mientras ofrece comodidades modernas.",
-			"en": "Built by Francisco Piria and inaugurated on December 24, 1930, the Hotel Argentino was designed by French architect Pierre Guichot to accommodate 1,200 guests. At the time, it was among the largest and most luxurious hotels in South America. The six-story building spans 120 meters in width and 70 meters in depth, featuring advanced facilities for its era, including thalassotherapy with hot and cold seawater showers and bathtubs, a Swedish gymnastics section, and hairdressing salons. Piria imported linen from Italy, crockery from Germany, glassware from Czechoslovakia, and furniture from Austria. In 1942, the Uruguayan state acquired the hotel, and in 1993 it was declared a National Historic Monument. Today it continues to operate, preserving its historical charm while offering modern amenities."
+			"en": "Built by Francisco Piria and inaugurated on December 24, 1930, the Hotel Argentino was designed by French architect Pierre Guichot to accommodate 1,200 guests. At the time, it was among the largest and most luxurious hotels in South America. The six-story building spans 120 meters in width and 70 meters in depth, featuring advanced facilities for its era, including thalassotherapy with hot and cold seawater showers and bathtubs, a Swedish gymnastics section, and hairdressing salons. Piria imported linen from Italy, crockery from Germany, glassware from Czechoslovakia, and furniture from Austria. In 1942, the Uruguayan state acquired the hotel, and in 1993 it was declared a National Historic Monument. Today it continues to operate, preserving its historical charm while offering modern amenities.",
+			"pt": "Construído por Francisco Piria e inaugurado em 24 de dezembro de 1930, o Hotel Argentino foi projetado pelo arquiteto francês Pierre Guichot para acomodar 1.200 hóspedes. Na época, estava entre os hotéis mais grandes e luxuosos da América do Sul. O edifício de seis andares mede 120 metros de largura por 70 metros de profundidade e contava com instalações avançadas para o período, incluindo talassoterapia com duchas e banheiras de água do mar quente e fria, uma seção de ginástica sueca e salões de cabeleireiro. Piria importou linho da Itália, louças da Alemanha, cristais da Tchecoslováquia e móveis da Áustria. Em 1942, o Estado uruguaio adquiriu o hotel e, em 1993, ele foi declarado Monumento Histórico Nacional. Hoje, segue em operação, preservando seu charme histórico enquanto oferece comodidades modernas."
 		},
 		"category": "museum",
 		"coordinates": [-34.8635555, -55.2790997]
@@ -172,11 +198,13 @@
 		"id": "playa-san-francisco",
 		"title": {
 			"es": "Playa San Francisco",
-			"en": "Playa San Francisco"
+			"en": "Playa San Francisco",
+			"pt": "Praia San Francisco"
 		},
 		"description": {
 			"es": "Una hermosa playa ubicada aproximadamente a 3 kilómetros al este de Piriápolis. Esta playa ofrece un ambiente tranquilo y relajado, ideal para quienes buscan escapar de las multitudes y disfrutar de un día de playa más privado.",
-			"en": "A beautiful beach located approximately 3 kilometers east of Piriápolis. This beach offers a quiet and relaxed atmosphere, ideal for those seeking to escape the crowds and enjoy a more private beach day."
+			"en": "A beautiful beach located approximately 3 kilometers east of Piriápolis. This beach offers a quiet and relaxed atmosphere, ideal for those seeking to escape the crowds and enjoy a more private beach day.",
+			"pt": "Uma bela praia localizada a aproximadamente 3 quilômetros a leste de Piriápolis. Oferece um ambiente calmo e relaxado, ideal para quem quer fugir das multidões e aproveitar um dia de praia mais reservado."
 		},
 		"category": "beach",
 		"coordinates": [-34.8904409,-55.2693948]
@@ -185,11 +213,13 @@
 		"id": "playa-punta-negra",
 		"title": {
 			"es": "Playa Punta Negra",
-			"en": "Playa Punta Negra"
+			"en": "Playa Punta Negra",
+			"pt": "Praia Punta Negra"
 		},
 		"description": {
 			"es": "Una playa ubicada aproximadamente a 10 kilómetros al este de Piriápolis. Esta playa es conocida por su belleza natural y su ambiente tranquilo, perfecta para relajarse y disfrutar del paisaje costero.",
-			"en": "A beach located approximately 10 kilometers east of Piriápolis. This beach is known for its natural beauty and tranquil atmosphere, perfect for relaxing and enjoying the coastal landscape."
+			"en": "A beach located approximately 10 kilometers east of Piriápolis. This beach is known for its natural beauty and tranquil atmosphere, perfect for relaxing and enjoying the coastal landscape.",
+			"pt": "Uma praia localizada a aproximadamente 10 quilômetros a leste de Piriápolis. É conhecida por sua beleza natural e atmosfera tranquila, perfeita para relaxar e apreciar a paisagem costeira."
 		},
 		"category": "beach",
 		"coordinates": [-34.8941229,-55.2204615]
@@ -198,11 +228,13 @@
 		"id": "la-rinconada",
 		"title": {
 			"es": "La Rinconada",
-			"en": "La Rinconada"
+			"en": "La Rinconada",
+			"pt": "La Rinconada"
 		},
 		"description": {
 			"es": "Un club nocturno ubicado en la Rambla de los Ingleses que ofrece un ambiente vibrante con música en vivo y una pista de baile. Es un punto de encuentro popular para quienes buscan disfrutar de la vida nocturna en Piriápolis. El club cuenta con aperitivos, una variedad de bebidas incluyendo cócteles y cervezas, y asientos tanto en interiores como al aire libre. También ofrece accesibilidad para personas en silla de ruedas.",
-			"en": "A nightclub located on Rambla de los Ingleses offering a vibrant atmosphere with live music and a dance floor. It's a popular meeting point for those seeking to enjoy Piriápolis nightlife. The club features appetizers, a variety of drinks including cocktails and beers, and seating both indoors and outdoors. It also offers wheelchair accessibility."
+			"en": "A nightclub located on Rambla de los Ingleses offering a vibrant atmosphere with live music and a dance floor. It's a popular meeting point for those seeking to enjoy Piriápolis nightlife. The club features appetizers, a variety of drinks including cocktails and beers, and seating both indoors and outdoors. It also offers wheelchair accessibility.",
+			"pt": "Uma casa noturna na Rambla de los Ingleses, com clima vibrante, música ao vivo e pista de dança. É um ponto de encontro popular para quem quer curtir a noite em Piriápolis. O local oferece petiscos, várias bebidas (incluindo coquetéis e cervejas) e áreas internas e ao ar livre. Também tem acessibilidade para pessoas em cadeira de rodas."
 		},
 		"category": "entertainment",
 		"coordinates": [-34.8808395,-55.2788979]
@@ -211,11 +243,13 @@
 		"id": "el-beril",
 		"title": {
 			"es": "El Beril",
-			"en": "El Beril"
+			"en": "El Beril",
+			"pt": "El Beril"
 		},
 		"description": {
 			"es": "Un bar y restaurante ubicado en la intersección de Avenida Central y Rambla de los Ingleses, en la zona de Punta Fría. Conocido por ofrecer música en vivo y una variada selección de doce cervezas artesanales tiradas. El ambiente es relajado y familiar, con opciones gastronómicas que incluyen entradas, hamburguesas, pizzas y frutos del mar.",
-			"en": "A bar and restaurant located at the intersection of Avenida Central and Rambla de los Ingleses, in the Punta Fría area. Known for offering live music and a varied selection of twelve craft beers on tap. The atmosphere is relaxed and family-friendly, with gastronomic options including appetizers, hamburgers, pizzas, and seafood."
+			"en": "A bar and restaurant located at the intersection of Avenida Central and Rambla de los Ingleses, in the Punta Fría area. Known for offering live music and a varied selection of twelve craft beers on tap. The atmosphere is relaxed and family-friendly, with gastronomic options including appetizers, hamburgers, pizzas, and seafood.",
+			"pt": "Um bar e restaurante na esquina da Avenida Central com a Rambla de los Ingleses, na região de Punta Fría. É conhecido por ter música ao vivo e uma seleção variada de doze cervejas artesanais na torneira. O ambiente é descontraído e familiar, com opções como entradas, hambúrgueres, pizzas e frutos do mar."
 		},
 		"category": "entertainment",
 		"coordinates": [-34.8888767,-55.2810299]
@@ -224,11 +258,13 @@
 		"id": "puerto-piriapolis",
 		"title": {
 			"es": "Puerto de Piriápolis",
-			"en": "Puerto de Piriápolis"
+			"en": "Puerto de Piriápolis",
+			"pt": "Porto de Piriápolis"
 		},
 		"description": {
 			"es": "El puerto de Piriápolis es una marina ubicada en el departamento de Maldonado. Es un punto importante para la navegación y actividades marítimas en la zona, ofreciendo servicios para embarcaciones y acceso al mar.",
-			"en": "The Puerto de Piriápolis is a marina located in the Maldonado department. It's an important point for navigation and maritime activities in the area, offering services for boats and access to the sea."
+			"en": "The Puerto de Piriápolis is a marina located in the Maldonado department. It's an important point for navigation and maritime activities in the area, offering services for boats and access to the sea.",
+			"pt": "O porto de Piriápolis é uma marina no departamento de Maldonado. É um ponto importante para navegação e atividades marítimas na região, oferecendo serviços para embarcações e acesso ao mar."
 		},
 		"category": "activity",
 		"coordinates": [-34.876781,-55.2815486]
@@ -237,11 +273,13 @@
 		"id": "cerro-de-las-animas",
 		"title": {
 			"es": "Cerro de las Ánimas",
-			"en": "Cerro de las Ánimas"
+			"en": "Cerro de las Ánimas",
+			"pt": "Cerro de las Ánimas"
 		},
 		"description": {
 			"es": "Con una altitud de 501 metros, el Cerro de las Ánimas es el segundo punto más alto de Uruguay. Se encuentra en el suroeste del departamento de Maldonado, cerca de Piriápolis, y forma parte de la Sierra de las Ánimas. El sendero al cerro es una ruta de ida y vuelta de aproximadamente 10,1 km, con un desnivel positivo de 460 metros. Se considera de dificultad moderada y suele completarse en unas 3,5 a 4 horas. Para realizar esta caminata, es necesario registrarse en la Cabaña Base, ubicada en el kilómetro 86 de la Ruta Interbalnearia, frente al Parador Los Cardos.",
-			"en": "Standing at 501 meters, Cerro de las Ánimas is the second highest point in Uruguay. Located in the southwest of Maldonado department, near Piriápolis, it forms part of the Sierra de las Ánimas. The trail to the summit is an out-and-back route of approximately 10.1 km, with an elevation gain of 460 meters. It's considered moderate difficulty and typically takes 3.5 to 4 hours to complete. To undertake this hike, registration is required at the Base Cabin, located at kilometer 86 of Ruta Interbalnearia, opposite Parador Los Cardos."
+			"en": "Standing at 501 meters, Cerro de las Ánimas is the second highest point in Uruguay. Located in the southwest of Maldonado department, near Piriápolis, it forms part of the Sierra de las Ánimas. The trail to the summit is an out-and-back route of approximately 10.1 km, with an elevation gain of 460 meters. It's considered moderate difficulty and typically takes 3.5 to 4 hours to complete. To undertake this hike, registration is required at the Base Cabin, located at kilometer 86 of Ruta Interbalnearia, opposite Parador Los Cardos.",
+			"pt": "Com 501 metros de altitude, o Cerro de las Ánimas é o segundo ponto mais alto do Uruguai. Fica no sudoeste do departamento de Maldonado, perto de Piriápolis, e faz parte da Sierra de las Ánimas. A trilha até o cume é um percurso de ida e volta de aproximadamente 10,1 km, com ganho de elevação de 460 metros. É considerada de dificuldade moderada e costuma levar de 3,5 a 4 horas. Para fazer a caminhada, é necessário se registrar na Cabaña Base, no km 86 da Ruta Interbalnearia, em frente ao Parador Los Cardos."
 		},
 		"category": "hiking",
 		"coordinates": [-34.7757777,-55.3434419]
@@ -250,11 +288,13 @@
 		"id": "playa-grande",
 		"title": {
 			"es": "Playa Grande",
-			"en": "Playa Grande"
+			"en": "Playa Grande",
+			"pt": "Praia Grande"
 		},
 		"description": {
 			"es": "Playa Grande es una localidad balnearia y suburbio occidental de la ciudad de Piriápolis, en el departamento de Maldonado. Esta playa ofrece un ambiente tranquilo y relajado, ideal para disfrutar de un día de playa con acceso fácil desde Piriápolis.",
-			"en": "Playa Grande is a beach resort and western suburb of the city of Piriápolis, in the Maldonado department. This beach offers a quiet and relaxed atmosphere, ideal for enjoying a beach day with easy access from Piriápolis."
+			"en": "Playa Grande is a beach resort and western suburb of the city of Piriápolis, in the Maldonado department. This beach offers a quiet and relaxed atmosphere, ideal for enjoying a beach day with easy access from Piriápolis.",
+			"pt": "Playa Grande é uma localidade balneária e subúrbio a oeste da cidade de Piriápolis, no departamento de Maldonado. A praia tem um clima calmo e relaxado, ideal para curtir o dia com acesso fácil a partir de Piriápolis."
 		},
 		"category": "beach",
 		"coordinates": [-34.8458, -55.2969]
@@ -263,11 +303,13 @@
 		"id": "playa-hermosa",
 		"title": {
 			"es": "Playa Hermosa",
-			"en": "Playa Hermosa"
+			"en": "Playa Hermosa",
+			"pt": "Praia Hermosa"
 		},
 		"description": {
 			"es": "Playa Hermosa es un balneario ubicado en el departamento de Maldonado, sobre la costa del Río de la Plata. Se encuentra aproximadamente a 4,5 km al noroeste de Piriápolis, limitando con Playa Verde al noroeste y Playa Grande al sudeste. Esta playa es conocida por su belleza natural y su ambiente tranquilo.",
-			"en": "Playa Hermosa is a beach resort located in the Maldonado department, on the coast of the Río de la Plata. It's located approximately 4.5 km northwest of Piriápolis, bordering Playa Verde to the northwest and Playa Grande to the southeast. This beach is known for its natural beauty and tranquil atmosphere."
+			"en": "Playa Hermosa is a beach resort located in the Maldonado department, on the coast of the Río de la Plata. It's located approximately 4.5 km northwest of Piriápolis, bordering Playa Verde to the northwest and Playa Grande to the southeast. This beach is known for its natural beauty and tranquil atmosphere.",
+			"pt": "Playa Hermosa é um balneário no departamento de Maldonado, na costa do Río de la Plata. Fica a cerca de 4,5 km a noroeste de Piriápolis, entre Playa Verde (noroeste) e Playa Grande (sudeste). É conhecida pela beleza natural e pela atmosfera tranquila."
 		},
 		"category": "beach",
 		"coordinates": [-34.8333, -55.3028]
@@ -276,11 +318,13 @@
 		"id": "bella-vista",
 		"title": {
 			"es": "Bella Vista",
-			"en": "Bella Vista"
+			"en": "Bella Vista",
+			"pt": "Bella Vista"
 		},
 		"description": {
 			"es": "Bella Vista es un balneario ubicado en el departamento de Maldonado, a lo largo de la costa del Río de la Plata. Se encuentra aproximadamente a 10 kilómetros al oeste de Piriápolis y a unos 85 kilómetros al este de Montevideo. El balneario está situado entre el Arroyo Espinas al oeste y el Arroyo Las Flores al este, con su playa extendiéndose aproximadamente 3 kilómetros entre estos dos arroyos.",
-			"en": "Bella Vista is a seaside resort located in the Maldonado Department, along the coast of the Río de la Plata. It's located approximately 10 kilometers west of Piriápolis and about 85 kilometers east of Montevideo. The resort is situated between Arroyo Espinas to the west and Arroyo Las Flores to the east, with its beach extending approximately 3 kilometers between these two streams."
+			"en": "Bella Vista is a seaside resort located in the Maldonado Department, along the coast of the Río de la Plata. It's located approximately 10 kilometers west of Piriápolis and about 85 kilometers east of Montevideo. The resort is situated between Arroyo Espinas to the west and Arroyo Las Flores to the east, with its beach extending approximately 3 kilometers between these two streams.",
+			"pt": "Bella Vista é um balneário no departamento de Maldonado, ao longo da costa do Río de la Plata. Fica a aproximadamente 10 km a oeste de Piriápolis e cerca de 85 km a leste de Montevidéu. O balneário está entre o Arroyo Espinas (oeste) e o Arroyo Las Flores (leste), com a praia se estendendo por cerca de 3 km entre esses dois cursos d’água."
 		},
 		"category": "beach",
 		"coordinates": [-34.805708,-55.3540598]
@@ -289,11 +333,13 @@
 		"id": "balneario-solis",
 		"title": {
 			"es": "Balneario Solís",
-			"en": "Balneario Solís"
+			"en": "Balneario Solís",
+			"pt": "Balneario Solís"
 		},
 		"description": {
 			"es": "Balneario Solís es un balneario costero ubicado en el departamento de Maldonado, situado en la desembocadura del arroyo Solís Grande, bordeando el Río de la Plata. Este balneario ofrece un ambiente tranquilo y relajado, ideal para disfrutar de la costa uruguaya.",
-			"en": "Balneario Solís is a coastal resort located in the Maldonado Department, situated at the mouth of the Solís Grande stream, bordering the Río de la Plata. This resort offers a quiet and relaxed atmosphere, ideal for enjoying the Uruguayan coast."
+			"en": "Balneario Solís is a coastal resort located in the Maldonado Department, situated at the mouth of the Solís Grande stream, bordering the Río de la Plata. This resort offers a quiet and relaxed atmosphere, ideal for enjoying the Uruguayan coast.",
+			"pt": "Balneario Solís é um balneário costeiro no departamento de Maldonado, na foz do arroyo Solís Grande, às margens do Río de la Plata. Oferece um clima calmo e relaxado, ideal para aproveitar a costa uruguaia."
 		},
 		"category": "beach",
 		"coordinates": [-34.7925, -55.3836]

@@ -2,30 +2,52 @@
 	import { onMount } from 'svelte';
 	import { loadLocations } from '$lib/utils';
 	import { language } from '$lib/i18n';
+	import type { Language } from '$lib/i18n';
 	import { getLocationDescription } from '$lib/utils/i18n';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 	import type { Location } from '$lib/types';
-	import { MapPin, ArrowRight } from 'lucide-svelte';
+	import { ArrowRight } from 'lucide-svelte';
 	import esTranslations from '$lib/i18n/translations/es.json';
 	import enTranslations from '$lib/i18n/translations/en.json';
+	import ptTranslations from '$lib/i18n/translations/pt.json';
 
 	let locations = $state<Location[]>([]);
 	let mounted = $state(false);
-	let lang = $state(language);
+	let lang = $state<Language>('es');
 
 	language.subscribe((value) => {
 		lang = value;
 	});
 
+	const translationsByLang = {
+		es: esTranslations,
+		en: enTranslations,
+		pt: ptTranslations
+	} as const;
+
 	// Reactive translations
 	const subtitleLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.home.subtitle;
 	});
 	const exploreLabel = $derived.by(() => {
-		const translations = lang === 'es' ? esTranslations : enTranslations;
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
 		return translations.common.explore;
 	});
+	const homeTitle = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.home.title;
+	});
+	const destinationsLabel = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.home.destinations;
+	});
+	const selectLocationLabel = $derived.by(() => {
+		const translations = translationsByLang[lang] ?? translationsByLang.es;
+		return translations.home.selectLocation;
+	});
+	const titleFirstWord = $derived.by(() => homeTitle.split(' ')[0] ?? homeTitle);
+	const titleRest = $derived.by(() => homeTitle.split(' ').slice(1).join(' ') || '');
 
 	onMount(() => {
 		locations = loadLocations();
@@ -43,7 +65,7 @@
 
 	<!-- Header -->
 	<header class="container-wide py-8 flex justify-between items-center relative z-20 border-b border-[#282837]">
-		<div class="text-neon-cyan text-sm font-semibold tracking-wide">Local Guide</div>
+		<div class="text-neon-cyan text-sm font-semibold tracking-wide">{homeTitle}</div>
 		<LanguageSwitcher />
 	</header>
 
@@ -51,11 +73,11 @@
 	<section class="section-spacing relative z-10">
 		<div class="container-wide">
 			<div class="max-w-4xl">
-				<div class="mb-4 text-[#ff00ff] text-sm font-medium">Explore</div>
+				<div class="mb-4 text-[#ff00ff] text-sm font-medium">{exploreLabel}</div>
 				<h1 class="heading-xl text-white mb-8">
-					<span class="text-neon-cyan">{lang === 'es' ? 'Guía' : 'Local'}</span>
+					<span class="text-neon-cyan">{titleFirstWord}</span>
 					<br />
-					<span class="text-neon-magenta">{lang === 'es' ? 'Local' : 'Guide'}</span>
+					<span class="text-neon-magenta">{titleRest}</span>
 				</h1>
 				<p class="text-xl text-[#a0a0b0] max-w-2xl leading-relaxed mb-12">
 					{subtitleLabel}
@@ -68,8 +90,8 @@
 	<section class="section-spacing border-t border-[#282837]">
 		<div class="container-wide">
 			<div class="mb-16">
-				<div class="text-[#ffc800] text-sm font-medium mb-4">Destinations</div>
-				<h2 class="heading-lg text-white">Select Location</h2>
+				<div class="text-[#ffc800] text-sm font-medium mb-4">{destinationsLabel}</div>
+				<h2 class="heading-lg text-white">{selectLocationLabel}</h2>
 			</div>
 
 			{#if mounted}
@@ -128,19 +150,4 @@
 	</section>
 </div>
 
-<style>
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(30px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.animate-fade-in {
-		animation: fadeIn 1s ease-out;
-	}
-</style>
+<style></style>

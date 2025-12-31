@@ -2,12 +2,14 @@ import { browser } from '$app/environment';
 import { writable, get } from 'svelte/store';
 import es from './translations/es.json';
 import en from './translations/en.json';
+import pt from './translations/pt.json';
 
-export type Language = 'es' | 'en';
+export type Language = 'es' | 'en' | 'pt';
 
 const translations = {
 	es,
-	en
+	en,
+	pt
 };
 
 // Default to Spanish
@@ -16,7 +18,7 @@ const defaultLang: Language = 'es';
 function getStoredLanguage(): Language {
 	if (!browser) return defaultLang;
 	const stored = localStorage.getItem('language');
-	return (stored === 'es' || stored === 'en') ? stored : defaultLang;
+	return stored === 'es' || stored === 'en' || stored === 'pt' ? stored : defaultLang;
 }
 
 function createLanguageStore() {
