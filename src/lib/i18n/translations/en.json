@@ -1,0 +1,28 @@
+{
+	"common": {
+		"explore": "Explore",
+		"filters": "Filters",
+		"selectAll": "Select All",
+		"clear": "Clear",
+		"places": "places",
+		"clickMarker": "Click on a marker to see details",
+		"back": "Back",
+		"map": "Map",
+		"list": "List",
+		"about": "About"
+	},
+	"home": {
+		"title": "Local Guide",
+		"subtitle": "Discover amazing destinations and explore the world's most beautiful places"
+	},
+	"categories": {
+		"activity": "Activity",
+		"hiking": "Hiking",
+		"restaurant": "Restaurant",
+		"entertainment": "Entertainment",
+		"beach": "Beach",
+		"nature": "Nature",
+		"museum": "Museum",
+		"viewpoint": "Viewpoint"
+	}
+}

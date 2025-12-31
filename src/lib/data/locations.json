@@ -1,0 +1,12 @@
+[
+	{
+		"id": "piriapolis",
+		"name": "Piriapolis",
+		"country": "Uruguay",
+		"description": {
+			"es": "Un encantador pueblo costero en Maldonado, conocido por sus hermosas playas, monumentos históricos y atracciones naturales. Fundado por Francisco Piria a finales del siglo XIX, Piriápolis combina la belleza natural de sus cerros y playas con una rica historia arquitectónica. Es un destino perfecto para quienes buscan relajación, aventura al aire libre y cultura.",
+			"en": "A charming coastal town in Maldonado, known for its beautiful beaches, historic landmarks, and natural attractions. Founded by Francisco Piria in the late 19th century, Piriápolis combines the natural beauty of its hills and beaches with rich architectural history. It's a perfect destination for those seeking relaxation, outdoor adventure, and culture."
+		},
+		"center": [-34.8681, -55.2744]
+	}
+]

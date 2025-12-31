@@ -1,0 +1,34 @@
+{
+	"activity": {
+		"icon": "activity",
+		"color": "#3b82f6"
+	},
+	"hiking": {
+		"icon": "mountain",
+		"color": "#10b981"
+	},
+	"restaurant": {
+		"icon": "utensils",
+		"color": "#f59e0b"
+	},
+	"entertainment": {
+		"icon": "music",
+		"color": "#8b5cf6"
+	},
+	"beach": {
+		"icon": "waves",
+		"color": "#06b6d4"
+	},
+	"nature": {
+		"icon": "trees",
+		"color": "#22c55e"
+	},
+	"museum": {
+		"icon": "building",
+		"color": "#ef4444"
+	},
+	"viewpoint": {
+		"icon": "eye",
+		"color": "#f97316"
+	}
+}

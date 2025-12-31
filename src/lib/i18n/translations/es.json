@@ -1,0 +1,28 @@
+{
+	"common": {
+		"explore": "Explorar",
+		"filters": "Filtros",
+		"selectAll": "Seleccionar todo",
+		"clear": "Limpiar",
+		"places": "lugares",
+		"clickMarker": "Haz clic en un marcador para ver detalles",
+		"back": "Volver",
+		"map": "Mapa",
+		"list": "Lista",
+		"about": "Acerca de"
+	},
+	"home": {
+		"title": "Guía Local",
+		"subtitle": "Descubre destinos increíbles y explora los lugares más hermosos del mundo"
+	},
+	"categories": {
+		"activity": "Actividad",
+		"hiking": "Senderismo",
+		"restaurant": "Restaurante",
+		"entertainment": "Entretenimiento",
+		"beach": "Playa",
+		"nature": "Naturaleza",
+		"museum": "Museo",
+		"viewpoint": "Mirador"
+	}
+}
