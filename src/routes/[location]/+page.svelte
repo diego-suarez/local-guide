@@ -41,7 +41,7 @@
 	let mounted = $state(false);
 	let filtersExpanded = $state(false);
 	let lang = $state(language);
-	let viewMode = $state<'map' | 'list'>('map');
+	let viewMode = $state<'map' | 'list'>('list');
 	let expandedCategories = $state(new Set<string>());
 	let expandedPlaces = $state(new Set<string>());
 
@@ -215,15 +215,6 @@
 	<div class="container-wide py-4 md:py-6 relative z-10">
 		<div class="flex items-center gap-2 border border-[#282837] bg-[#12121c] p-1 max-w-fit">
 			<button
-				onclick={() => viewMode = 'map'}
-				class="flex items-center gap-2 px-5 py-2 text-sm font-medium transition-all duration-300 {viewMode === 'map'
-					? 'bg-[#00ffff] text-[#08080c]'
-					: 'text-[#a0a0b0] hover:text-[#00ffff]'}"
-			>
-				<MapIcon class="w-4 h-4" />
-				{mapLabel}
-			</button>
-			<button
 				onclick={() => viewMode = 'list'}
 				class="flex items-center gap-2 px-5 py-2 text-sm font-medium transition-all duration-300 {viewMode === 'list'
 					? 'bg-[#00ffff] text-[#08080c]'
@@ -231,6 +222,15 @@
 			>
 				<List class="w-4 h-4" />
 				{listLabel}
+			</button>
+			<button
+				onclick={() => viewMode = 'map'}
+				class="flex items-center gap-2 px-5 py-2 text-sm font-medium transition-all duration-300 {viewMode === 'map'
+					? 'bg-[#00ffff] text-[#08080c]'
+					: 'text-[#a0a0b0] hover:text-[#00ffff]'}"
+			>
+				<MapIcon class="w-4 h-4" />
+				{mapLabel}
 			</button>
 		</div>
 	</div>
