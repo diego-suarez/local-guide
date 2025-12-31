@@ -15,6 +15,21 @@
 		"coordinates": [-34.8697722,-55.2760216]
 	},
 	{
+		"id": "kraken",
+		"title": {
+			"es": "Kraken",
+			"en": "Kraken",
+			"pt": "Kraken"
+		},
+		"description": {
+			"es": "Restaurante y bar icónico ubicado en la Rambla de los Ingleses esquina Manuel Montes de Oca, en la zona de Punta Fría. Ofrece una fusión de cocina de mar y tierra, destacándose por sus especialidades en mariscos y sushi. Entre sus platos destacados se encuentran pulpo grillado, ceviche fresco, rabas crocantes, tablas para compartir, hamburguesas gourmet, pizzas artesanales al horno de piedra y una exclusiva coctelería inspirada en el mar. Cuenta con terraza al aire libre con vista al mar y música en vivo los fines de semana. Ofrece opciones vegetarianas y veganas.",
+			"en": "Iconic restaurant and bar located at Rambla de los Ingleses corner Manuel Montes de Oca, in the Punta Fría area. It offers a fusion of sea and land cuisine, standing out for its specialties in seafood and sushi. Among its featured dishes are grilled octopus, fresh ceviche, crispy calamari, sharing platters, gourmet burgers, artisanal stone-baked pizzas, and an exclusive cocktail menu inspired by the sea. It features an outdoor terrace with sea views and live music on weekends. Offers vegetarian and vegan options.",
+			"pt": "Restaurante e bar icônico na Rambla de los Ingleses, esquina com Manuel Montes de Oca, na região de Punta Fría. Oferece uma fusão de culinária do mar e da terra, destacando-se por especialidades em frutos do mar e sushi. Entre os pratos em destaque estão polvo grelhado, ceviche fresco, lulas crocantes, tabuas para compartilhar, hambúrgueres gourmet, pizzas artesanais assadas em forno de pedra e uma coquetelaria exclusiva inspirada no mar. Tem terraço ao ar livre com vista para o mar e música ao vivo nos fins de semana. Oferece opções vegetarianas e veganas."
+		},
+		"category": "restaurant",
+		"coordinates": [-34.8858717, -55.2807274]
+	},
+	{
 		"id": "cerro-san-antonio",
 		"title": {
 			"es": "Cerro San Antonio",
@@ -378,21 +393,6 @@
 		},
 		"category": "restaurant",
 		"coordinates": [-34.8678013, -55.275986]
-	},
-	{
-		"id": "kraken",
-		"title": {
-			"es": "Kraken",
-			"en": "Kraken",
-			"pt": "Kraken"
-		},
-		"description": {
-			"es": "Restaurante y bar icónico ubicado en la Rambla de los Ingleses esquina Manuel Montes de Oca, en la zona de Punta Fría. Ofrece una fusión de cocina de mar y tierra, destacándose por sus especialidades en mariscos y sushi. Entre sus platos destacados se encuentran pulpo grillado, ceviche fresco, rabas crocantes, tablas para compartir, hamburguesas gourmet, pizzas artesanales al horno de piedra y una exclusiva coctelería inspirada en el mar. Cuenta con terraza al aire libre con vista al mar y música en vivo los fines de semana. Ofrece opciones vegetarianas y veganas.",
-			"en": "Iconic restaurant and bar located at Rambla de los Ingleses corner Manuel Montes de Oca, in the Punta Fría area. It offers a fusion of sea and land cuisine, standing out for its specialties in seafood and sushi. Among its featured dishes are grilled octopus, fresh ceviche, crispy calamari, sharing platters, gourmet burgers, artisanal stone-baked pizzas, and an exclusive cocktail menu inspired by the sea. It features an outdoor terrace with sea views and live music on weekends. Offers vegetarian and vegan options.",
-			"pt": "Restaurante e bar icônico na Rambla de los Ingleses, esquina com Manuel Montes de Oca, na região de Punta Fría. Oferece uma fusão de culinária do mar e da terra, destacando-se por especialidades em frutos do mar e sushi. Entre os pratos em destaque estão polvo grelhado, ceviche fresco, lulas crocantes, tabuas para compartilhar, hambúrgueres gourmet, pizzas artesanais assadas em forno de pedra e uma coquetelaria exclusiva inspirada no mar. Tem terraço ao ar livre com vista para o mar e música ao vivo nos fins de semana. Oferece opções vegetarianas e veganas."
-		},
-		"category": "restaurant",
-		"coordinates": [-34.8858717, -55.2807274]
 	},
 	{
 		"id": "ocho-nudos",
