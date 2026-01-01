@@ -34,7 +34,12 @@ jobs:
         env:
           PUBLIC_GA4_MEASUREMENT_ID: ${{ secrets.PUBLIC_GA4_MEASUREMENT_ID }}
         run: |
-          echo "Checking if secret is set (first 3 chars only): ${PUBLIC_GA4_MEASUREMENT_ID:0:3}..."
+          if [ -z "$PUBLIC_GA4_MEASUREMENT_ID" ]; then
+            echo "❌ ERROR: PUBLIC_GA4_MEASUREMENT_ID secret is not set!"
+            echo "Please add it in: Repository → Settings → Secrets and variables → Actions"
+            exit 1
+          fi
+          echo "✓ PUBLIC_GA4_MEASUREMENT_ID is set"
           npm run build
       
       - name: Setup Pages

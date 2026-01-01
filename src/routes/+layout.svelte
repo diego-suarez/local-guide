@@ -22,19 +22,9 @@
 	onMount(() => {
 		if (!browser) return;
 
-		// Debug: Log if Measurement ID is available (only in browser)
-		if (browser) {
-			console.log('[GA4 Debug] Measurement ID available:', GA4_MEASUREMENT_ID ? 'YES' : 'NO');
-			if (GA4_MEASUREMENT_ID) {
-				console.log('[GA4 Debug] Measurement ID:', GA4_MEASUREMENT_ID);
-			}
-		}
-
 		// Initialize Google Analytics 4 (if configured)
 		if (GA4_MEASUREMENT_ID) {
 			initGA4(GA4_MEASUREMENT_ID);
-		} else {
-			console.warn('[GA4 Debug] Measurement ID not found. Check GitHub Secrets.');
 		}
 	});
 
