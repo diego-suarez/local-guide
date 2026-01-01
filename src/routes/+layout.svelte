@@ -30,8 +30,16 @@
 
 	// Track page views on route changes
 	$effect(() => {
-		if (browser && page.url.pathname && GA4_MEASUREMENT_ID) {
-			trackPageViewGA4(page.url.pathname, GA4_MEASUREMENT_ID);
+		if (!browser || !GA4_MEASUREMENT_ID) return;
+		
+		// Access page store - it's reactive in $effect
+		try {
+			const pathname = page.url?.pathname;
+			if (pathname) {
+				trackPageViewGA4(pathname, GA4_MEASUREMENT_ID);
+			}
+		} catch (e) {
+			// Page store not available yet, skip
 		}
 	});
 </script>

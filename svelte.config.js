@@ -14,7 +14,8 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: '/local-guide'
+			base: '/local-guide',
+			relative: false
 		}
 	}
 };
