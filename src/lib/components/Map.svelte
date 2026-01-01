@@ -6,6 +6,7 @@
 	import { popupPlace } from '$lib/stores/popup';
 	import type { Place } from '$lib/types';
 	import { getPlaceText } from '$lib/utils/i18n';
+	import { trackMarkerClick } from '$lib/utils/analytics';
 	import esTranslations from '$lib/i18n/translations/es.json';
 	import enTranslations from '$lib/i18n/translations/en.json';
 	import ptTranslations from '$lib/i18n/translations/pt.json';
@@ -225,6 +226,8 @@
 				e?.originalEvent?.stopPropagation?.();
 				selectedPlace = place; // Keep for highlighting
 				popupPlace.set(place); // Show custom popup via store
+				// Track marker click
+				trackMarkerClick(placeTitle, place.category);
 			});
 			marker.on('mouseover', () => {
 				marker.openTooltip();

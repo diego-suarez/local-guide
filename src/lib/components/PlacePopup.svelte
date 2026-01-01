@@ -9,6 +9,7 @@
 	import { normalizeInstagramUrl } from '$lib/utils/links';
 	import { getCoverImagePath } from '$lib/utils';
 	import { base } from '$app/paths';
+	import { trackNavigationClick, trackPlaceView } from '$lib/utils/analytics';
 	import enTranslations from '$lib/i18n/translations/en.json';
 	import esTranslations from '$lib/i18n/translations/es.json';
 	import ptTranslations from '$lib/i18n/translations/pt.json';
@@ -53,6 +54,10 @@
 	// Subscribe to popup store
 	popupPlace.subscribe((place) => {
 		currentPlace = place;
+		// Track when a place popup is opened
+		if (place) {
+			trackPlaceView(getPlaceText(place, 'title'), place.category);
+		}
 	});
 
 	language.subscribe((value) => {
@@ -151,11 +156,35 @@
 						<div class="popup-navigation">
 							<div class="popup-navigation-label">{goToLabel}</div>
 							<div class="popup-navigation-links">
-								<a href={getWazeUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Waze</a>
-								<a href={getGoogleMapsUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Google Maps</a>
-								<a href={getAppleMapsUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Apple Maps</a>
+								<a 
+									href={getWazeUrl(lat, lng)} 
+									target="_blank" 
+									rel="noopener noreferrer" 
+									class="nav-text-link"
+									on:click={() => trackNavigationClick('waze', placeTitle)}
+								>Waze</a>
+								<a 
+									href={getGoogleMapsUrl(lat, lng)} 
+									target="_blank" 
+									rel="noopener noreferrer" 
+									class="nav-text-link"
+									on:click={() => trackNavigationClick('google-maps', placeTitle)}
+								>Google Maps</a>
+								<a 
+									href={getAppleMapsUrl(lat, lng)} 
+									target="_blank" 
+									rel="noopener noreferrer" 
+									class="nav-text-link"
+									on:click={() => trackNavigationClick('apple-maps', placeTitle)}
+								>Apple Maps</a>
 								{#if instagramUrl}
-									<a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="nav-text-link nav-text-link-instagram">{instagramLabel}</a>
+									<a 
+										href={instagramUrl} 
+										target="_blank" 
+										rel="noopener noreferrer" 
+										class="nav-text-link nav-text-link-instagram"
+										on:click={() => trackNavigationClick('instagram', placeTitle)}
+									>{instagramLabel}</a>
 								{/if}
 							</div>
 						</div>

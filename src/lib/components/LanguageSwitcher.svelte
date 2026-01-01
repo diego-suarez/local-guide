@@ -3,6 +3,7 @@
 	import { t } from '../i18n';
 	import type { Language } from '../i18n';
 	import { Languages } from 'lucide-svelte';
+	import { trackLanguageChange } from '$lib/utils/analytics';
 
 	let isOpen = $state(false);
 	let lang = $state<Language>('es');
@@ -13,6 +14,7 @@
 
 	function setLang(newLang: Language) {
 		language.set(newLang);
+		trackLanguageChange(newLang);
 		isOpen = false;
 	}
 </script>

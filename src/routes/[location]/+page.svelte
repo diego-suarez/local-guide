@@ -9,6 +9,7 @@
 	import { normalizeInstagramUrl } from '$lib/utils/links';
 	import { getCoverImagePath } from '$lib/utils';
 	import { base } from '$app/paths';
+	import { trackLocationView, trackListExpand, trackNavigationClick } from '$lib/utils/analytics';
 	import type { Place, Location, Categories } from '$lib/types';
 	import categoriesData from '$lib/data/categories.json';
 	import {
@@ -193,10 +194,16 @@
 	}
 
 	function togglePlaceExpansion(placeId: string) {
-		if (expandedPlaces.has(placeId)) {
+		const wasExpanded = expandedPlaces.has(placeId);
+		if (wasExpanded) {
 			expandedPlaces.delete(placeId);
 		} else {
 			expandedPlaces.add(placeId);
+			// Track list expansion (only when expanding, not collapsing)
+			const place = data.places.find(p => p.id === placeId);
+			if (place && browser) {
+				trackListExpand(getPlaceText(place, 'title'), place.category);
+			}
 		}
 		expandedPlaces = new Set(expandedPlaces);
 	}
@@ -213,6 +220,10 @@
 
 	onMount(() => {
 		mounted = true;
+		// Track location page view
+		if (browser) {
+			trackLocationView(data.location.name);
+		}
 	});
 
 	// Get cover image path for location
@@ -461,18 +472,21 @@
 																target="_blank" 
 																rel="noopener noreferrer" 
 																class="nav-text-link"
+																on:click={() => trackNavigationClick('waze', getPlaceText(place, 'title'))}
 															>Waze</a>
 															<a 
 																href="https://www.google.com/maps/dir/?api=1&destination={place.coordinates[0]},{place.coordinates[1]}" 
 																target="_blank" 
 																rel="noopener noreferrer" 
 																class="nav-text-link"
+																on:click={() => trackNavigationClick('google-maps', getPlaceText(place, 'title'))}
 															>Google Maps</a>
 															<a 
 																href="https://maps.apple.com/?daddr={place.coordinates[0]},{place.coordinates[1]}&dirflg=d" 
 																target="_blank" 
 																rel="noopener noreferrer" 
 																class="nav-text-link"
+																on:click={() => trackNavigationClick('apple-maps', getPlaceText(place, 'title'))}
 															>Apple Maps</a>
 															{#if getInstagramHref(place)}
 																<a
@@ -480,6 +494,7 @@
 																	target="_blank"
 																	rel="noopener noreferrer"
 																	class="nav-text-link nav-text-link-instagram"
+																	on:click={() => trackNavigationClick('instagram', getPlaceText(place, 'title'))}
 																>{instagramLabel}</a>
 															{/if}
 														</div>
