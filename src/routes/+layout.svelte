@@ -19,17 +19,13 @@
 	// Format: G-XXXXXXXXXX
 	const GA4_MEASUREMENT_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || '';
 
-	onMount(() => {
-		if (!browser) return;
+	// Initialize GA4 immediately (not in onMount to avoid race condition with $effect)
+	// This ensures GA4 is ready when $effect runs for initial page load
+	if (browser && GA4_MEASUREMENT_ID) {
+		initGA4(GA4_MEASUREMENT_ID);
+	}
 
-		// Initialize Google Analytics 4 (if configured)
-		// This injects the script directly into the head for proper loading
-		if (GA4_MEASUREMENT_ID) {
-			initGA4(GA4_MEASUREMENT_ID);
-		}
-	});
-
-	// Track page views on route changes
+	// Track page views on route changes (including initial page load)
 	$effect(() => {
 		if (!browser || !GA4_MEASUREMENT_ID) return;
 		
