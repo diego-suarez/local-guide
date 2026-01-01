@@ -7,12 +7,15 @@
 			"pt": "Praia de Piriápolis"
 		},
 		"description": {
-			"es": "La playa principal del pueblo es un punto focal para la relajación y los deportes acuáticos. Las arenas blancas y limpias y las aguas cálidas la hacen ideal para nadar, tomar sol y juegos en la playa. La adyacente Rambla de los Argentinos es perfecta para paseos tranquilos, ofreciendo vistas pintorescas de la costa.",
-			"en": "The town's main beach is a focal point for relaxation and water sports. The clean, white sands and warm waters make it ideal for swimming, sunbathing, and beach games. The adjacent Rambla de los Argentinos is perfect for leisurely strolls, offering picturesque views of the coastline.",
-			"pt": "A principal praia da cidade é um ponto central para relaxar e praticar esportes aquáticos. As areias claras e limpas e as águas mornas a tornam ideal para nadar, tomar sol e brincar na areia. A vizinha Rambla de los Argentinos é perfeita para caminhadas tranquilas, com vistas pitorescas da orla."
+			"es": "La playa principal de Piriápolis se distingue por ser la única playa de la región con accesibilidad natural para sillas de ruedas, gracias a su sedimento particular. Cuenta con áreas delimitadas para windsurf, jet ski, esquí acuático y banana boat, además de canchas para vóley y fútbol playa. La playa está dividida por espigones protectores que crean zonas más tranquilas, y está rodeada por los cerros San Antonio y Pan de Azúcar, ofreciendo vistas panorámicas únicas.",
+			"en": "Piriápolis' main beach is distinguished as the only beach in the region with natural wheelchair accessibility, thanks to its particular sediment. It features designated areas for windsurfing, jet skiing, water skiing, and banana boats, plus courts for beach volleyball and soccer. The beach is divided by protective jetties that create calmer zones, and is surrounded by San Antonio and Pan de Azúcar hills, offering unique panoramic views.",
+			"pt": "A praia principal de Piriápolis se destaca por ser a única praia da região com acessibilidade natural para cadeiras de rodas, graças ao seu sedimento particular. Possui áreas delimitadas para windsurf, jet ski, esqui aquático e banana boat, além de quadras para vôlei e futebol de areia. A praia é dividida por quebra-mares que criam zonas mais calmas e está cercada pelos morros San Antonio e Pan de Azúcar, oferecendo vistas panorâmicas únicas."
 		},
 		"category": "beach",
-		"coordinates": [-34.8697722,-55.2760216]
+		"coordinates": [
+			-34.8697722,
+			-55.2760216
+		]
 	},
 	{
 		"id": "kraken",
@@ -27,7 +30,10 @@
 			"pt": "Restaurante e bar icônico na Rambla de los Ingleses, esquina com Manuel Montes de Oca, na região de Punta Fría. Oferece uma fusão de culinária do mar e da terra, destacando-se por especialidades em frutos do mar e sushi. Entre os pratos em destaque estão polvo grelhado, ceviche fresco, lulas crocantes, tabuas para compartilhar, hambúrgueres gourmet, pizzas artesanais assadas em forno de pedra e uma coquetelaria exclusiva inspirada no mar. Tem terraço ao ar livre com vista para o mar e música ao vivo nos fins de semana. Oferece opções vegetarianas e veganas."
 		},
 		"category": "restaurant",
-		"coordinates": [-34.8858717, -55.2807274]
+		"coordinates": [
+			-34.8858717,
+			-55.2807274
+		]
 	},
 	{
 		"id": "cerro-san-antonio",
@@ -42,7 +48,10 @@
 			"pt": "Este morro de 130 metros oferece vistas panorâmicas de Piriápolis e arredores. É possível chegar ao topo de carro, a pé ou por teleférico. Lá em cima, você encontra uma pequena capela dedicada a Santo Antônio e uma estátua da Virgem Stella Maris."
 		},
 		"category": "viewpoint",
-		"coordinates": [-34.8780, -55.2740]
+		"coordinates": [
+			-34.878,
+			-55.274
+		]
 	},
 	{
 		"id": "cerro-pan-azucar",
@@ -57,7 +66,10 @@
 			"pt": "Com 423 metros de altura, o Cerro Pan de Azúcar é um dos pontos mais altos do Uruguai. A caminhada até o topo recompensa os aventureiros com vistas deslumbrantes. Na base, a Reserva de Flora e Fauna do Pan de Azúcar abriga vida selvagem nativa, incluindo capivaras e pumas."
 		},
 		"category": "hiking",
-		"coordinates": [-34.8102032,-55.2592487]
+		"coordinates": [
+			-34.8102032,
+			-55.2592487
+		]
 	},
 	{
 		"id": "castillo-piria",
@@ -72,7 +84,10 @@
 			"pt": "Construído em 1897 por Francisco Piria, fundador de Piriápolis, este castelo exibe uma arquitetura eclética e símbolos alquímicos. Hoje funciona como museu, com informações sobre a vida de Piria e a história da cidade."
 		},
 		"category": "museum",
-		"coordinates": [-34.8286343,-55.2516936],
+		"coordinates": [
+			-34.8286343,
+			-55.2516936
+		],
 		"instagram": "https://www.instagram.com/castillodepiria/"
 	},
 	{
@@ -88,7 +103,10 @@
 			"pt": "Localizada nas encostas do Cerro del Toro, esta estátua de bronze de um touro tem uma nascente natural que jorra pela boca. O lugar é cercado por vegetação exuberante e oferece um refúgio tranquilo para visitantes."
 		},
 		"category": "nature",
-		"coordinates": [-34.8656104,-55.2603336]
+		"coordinates": [
+			-34.8656104,
+			-55.2603336
+		]
 	},
 	{
 		"id": "museo-ferroviario",
@@ -103,7 +121,10 @@
 			"pt": "Instalado na antiga estação ferroviária, este museu exibe locomotivas históricas, vagões e equipamentos do início do século XX, refletindo a história do transporte da cidade."
 		},
 		"category": "museum",
-		"coordinates": [-34.8638963,-55.2776513]
+		"coordinates": [
+			-34.8638963,
+			-55.2776513
+		]
 	},
 	{
 		"id": "punta-colorada",
@@ -113,12 +134,15 @@
 			"pt": "Punta Colorada"
 		},
 		"description": {
-			"es": "Una pequeña área de playa conocida por sus aguas tranquilas y dunas, Punta Colorada también es un lugar popular para pescar con hermosos paisajes naturales.",
-			"en": "A small beach area known for its calm waters and dunes, Punta Colorada is also a popular fishing spot with beautiful natural scenery.",
-			"pt": "Uma pequena área de praia conhecida por suas águas calmas e dunas. Punta Colorada também é um ponto popular para pesca, com belas paisagens naturais."
+			"es": "Punta Colorada debe su nombre a las características rocas de tonalidad rojiza que se encuentran en la zona. El balneario cuenta con dos playas distintas: Playa Mansa al oeste, con aguas tranquilas e ideal para familias, y Playa Brava al este, con oleaje intenso que atrae a surfistas. Rodeada de dunas y pastizales, es reconocida como uno de los pesqueros más importantes de la región, con formaciones rocosas que crean muelles naturales para capturar corvina, brótola, pejerrey y sargo. Durante la primavera es posible avistar ballenas francas australes.",
+			"en": "Punta Colorada gets its name from the characteristic reddish-toned rocks found in the area. The resort features two distinct beaches: Playa Mansa to the west, with calm waters ideal for families, and Playa Brava to the east, with intense waves that attract surfers. Surrounded by dunes and grasslands, it's recognized as one of the most important fishing spots in the region, with rock formations that create natural piers for catching white and black croaker, brótola, silverside, and sargo. During spring, it's possible to spot southern right whales.",
+			"pt": "Punta Colorada deve seu nome às características rochas de tonalidade avermelhada encontradas na área. O balneário possui duas praias distintas: Playa Mansa a oeste, com águas calmas ideais para famílias, e Playa Brava a leste, com ondas intensas que atraem surfistas. Cercada por dunas e pastagens, é reconhecida como um dos pontos de pesca mais importantes da região, com formações rochosas que criam píeres naturais para capturar corvina, brótola, peixe-rei e sargo. Durante a primavera é possível avistar baleias-francas-austrais."
 		},
 		"category": "beach",
-		"coordinates": [-34.9008583,-55.2582281]
+		"coordinates": [
+			-34.9008583,
+			-55.2582281
+		]
 	},
 	{
 		"id": "casino-argentino",
@@ -133,7 +157,10 @@
 			"pt": "Um edifício histórico de cassino que acrescenta charme à cidade. A área ao redor tem bares à beira-mar e uma vida noturna tranquila."
 		},
 		"category": "entertainment",
-		"coordinates": [-34.8630906,-55.2794539]
+		"coordinates": [
+			-34.8630906,
+			-55.2794539
+		]
 	},
 	{
 		"id": "rambla-argentinos",
@@ -148,7 +175,10 @@
 			"pt": "Um belo calçadão à beira-mar, perfeito para caminhadas tranquilas, corrida ou simplesmente apreciar as vistas pitorescas da costa e do mar."
 		},
 		"category": "activity",
-		"coordinates": [-34.8676374,-55.2762798]
+		"coordinates": [
+			-34.8676374,
+			-55.2762798
+		]
 	},
 	{
 		"id": "cerro-del-toro",
@@ -163,7 +193,10 @@
 			"pt": "Um morro cênico com trilhas e muita beleza natural. A área é conhecida pela vegetação exuberante e pela famosa estátua da Fuente del Toro."
 		},
 		"category": "hiking",
-		"coordinates": [-34.8622965,-55.2576431]
+		"coordinates": [
+			-34.8622965,
+			-55.2576431
+		]
 	},
 	{
 		"id": "plaza-artigas",
@@ -178,7 +211,10 @@
 			"pt": "A praça principal de Piriápolis, um ponto de encontro central cercado por lojas, cafés e restaurantes. Um ótimo ponto de partida para explorar a cidade."
 		},
 		"category": "activity",
-		"coordinates": [-34.8633614,-55.2761403]
+		"coordinates": [
+			-34.8633614,
+			-55.2761403
+		]
 	},
 	{
 		"id": "fuente-venus",
@@ -193,7 +229,10 @@
 			"pt": "Uma fonte de estilo clássico com uma estátua de Vênus, cercada por um parque com bancos e sebes aparadas. Encomendada por Francisco Piria, reflete o patrimônio arquitetônico da cidade."
 		},
 		"category": "nature",
-		"coordinates": [-34.8707266,-55.2637698]
+		"coordinates": [
+			-34.8707266,
+			-55.2637698
+		]
 	},
 	{
 		"id": "hotel-argentino",
@@ -208,7 +247,10 @@
 			"pt": "Construído por Francisco Piria e inaugurado em 24 de dezembro de 1930, o Hotel Argentino foi projetado pelo arquiteto francês Pierre Guichot para acomodar 1.200 hóspedes. Na época, estava entre os hotéis mais grandes e luxuosos da América do Sul. O edifício de seis andares mede 120 metros de largura por 70 metros de profundidade e contava com instalações avançadas para o período, incluindo talassoterapia com duchas e banheiras de água do mar quente e fria, uma seção de ginástica sueca e salões de cabeleireiro. Piria importou linho da Itália, louças da Alemanha, cristais da Tchecoslováquia e móveis da Áustria. Em 1942, o Estado uruguaio adquiriu o hotel e, em 1993, ele foi declarado Monumento Histórico Nacional. Hoje, segue em operação, preservando seu charme histórico enquanto oferece comodidades modernas."
 		},
 		"category": "museum",
-		"coordinates": [-34.8635555, -55.2790997],
+		"coordinates": [
+			-34.8635555,
+			-55.2790997
+		],
 		"instagram": "https://www.instagram.com/argentinohotel/"
 	},
 	{
@@ -219,12 +261,15 @@
 			"pt": "Praia San Francisco"
 		},
 		"description": {
-			"es": "Una hermosa playa ubicada aproximadamente a 3 kilómetros al este de Piriápolis. Esta playa ofrece un ambiente tranquilo y relajado, ideal para quienes buscan escapar de las multitudes y disfrutar de un día de playa más privado.",
-			"en": "A beautiful beach located approximately 3 kilometers east of Piriápolis. This beach offers a quiet and relaxed atmosphere, ideal for those seeking to escape the crowds and enjoy a more private beach day.",
-			"pt": "Uma bela praia localizada a aproximadamente 3 quilômetros a leste de Piriápolis. Oferece um ambiente calmo e relaxado, ideal para quem quer fugir das multidões e aproveitar um dia de praia mais reservado."
+			"es": "Ubicada a 3 kilómetros al este de Piriápolis, Playa San Francisco se distingue por sus aguas cristalinas y un oleaje más intenso que marca la transición hacia la influencia del océano Atlántico. Es un destino popular para surfistas que buscan aprovechar sus excelentes picos. Rodeada de un entorno agreste con arenas blancas, médanos y cerros de fondo, también es ideal para la pesca, especialmente en la zona de Punta Fría. Durante los meses de agosto, septiembre y octubre, es posible avistar ballenas y ballenatos que se acercan a la costa.",
+			"en": "Located 3 kilometers east of Piriápolis, Playa San Francisco stands out for its crystal-clear waters and stronger waves that mark the transition toward Atlantic Ocean influence. It's a popular destination for surfers seeking to take advantage of its excellent peaks. Surrounded by a wild environment with white sands, dunes, and hills in the background, it's also ideal for fishing, especially in the Punta Fría area. During August, September, and October, it's possible to spot whales and calves that approach the coast.",
+			"pt": "Localizada a 3 quilômetros a leste de Piriápolis, Playa San Francisco se destaca por suas águas cristalinas e ondas mais intensas que marcam a transição para a influência do oceano Atlântico. É um destino popular para surfistas que buscam aproveitar seus excelentes picos. Cercada por um ambiente agreste com areias brancas, dunas e morros ao fundo, também é ideal para pesca, especialmente na área de Punta Fría. Durante agosto, setembro e outubro, é possível avistar baleias e filhotes que se aproximam da costa."
 		},
 		"category": "beach",
-		"coordinates": [-34.8904409,-55.2693948]
+		"coordinates": [
+			-34.8904409,
+			-55.2693948
+		]
 	},
 	{
 		"id": "playa-punta-negra",
@@ -234,12 +279,15 @@
 			"pt": "Praia Punta Negra"
 		},
 		"description": {
-			"es": "Una playa ubicada aproximadamente a 10 kilómetros al este de Piriápolis. Esta playa es conocida por su belleza natural y su ambiente tranquilo, perfecta para relajarse y disfrutar del paisaje costero.",
-			"en": "A beach located approximately 10 kilometers east of Piriápolis. This beach is known for its natural beauty and tranquil atmosphere, perfect for relaxing and enjoying the coastal landscape.",
-			"pt": "Uma praia localizada a aproximadamente 10 quilômetros a leste de Piriápolis. É conhecida por sua beleza natural e atmosfera tranquila, perfeita para relaxar e apreciar a paisagem costeira."
+			"es": "Ubicada a 10 kilómetros al este de Piriápolis, Playa Punta Negra se caracteriza por su entorno natural prácticamente virgen y su atmósfera de serenidad absoluta. Con una gran extensión y belleza agreste, es un refugio perfecto para los amantes de la paz y el silencio, donde el único sonido es el de las olas y el viento. Su amplitud permite disfrutar de largos paseos por la costa. A pesar de su crecimiento reciente, mantiene su esencia tranquila con infraestructura limitada: solo cuenta con dos almacenes y un par de restaurantes, preservando así su encanto auténtico y alejado de las multitudes.",
+			"en": "Located 10 kilometers east of Piriápolis, Playa Punta Negra is characterized by its practically virgin natural environment and atmosphere of absolute serenity. With great extension and wild beauty, it's a perfect refuge for lovers of peace and silence, where the only sounds are waves and wind. Its width allows for long walks along the coast. Despite recent growth, it maintains its tranquil essence with limited infrastructure: it only has two stores and a couple of restaurants, thus preserving its authentic charm away from crowds.",
+			"pt": "Localizada a 10 quilômetros a leste de Piriápolis, Playa Punta Negra se caracteriza por seu ambiente natural praticamente virgem e atmosfera de serenidade absoluta. Com grande extensão e beleza agreste, é um refúgio perfeito para os amantes da paz e do silêncio, onde os únicos sons são das ondas e do vento. Sua amplitude permite longas caminhadas pela costa. Apesar do crescimento recente, mantém sua essência tranquila com infraestrutura limitada: possui apenas duas lojas e alguns restaurantes, preservando assim seu charme autêntico longe das multidões."
 		},
 		"category": "beach",
-		"coordinates": [-34.8941229,-55.2204615]
+		"coordinates": [
+			-34.8941229,
+			-55.2204615
+		]
 	},
 	{
 		"id": "la-rinconada",
@@ -254,7 +302,10 @@
 			"pt": "Uma casa noturna na Rambla de los Ingleses, com clima vibrante, música ao vivo e pista de dança. É um ponto de encontro popular para quem quer curtir a noite em Piriápolis. O local oferece petiscos, várias bebidas (incluindo coquetéis e cervejas) e áreas internas e ao ar livre. Também tem acessibilidade para pessoas em cadeira de rodas."
 		},
 		"category": "entertainment",
-		"coordinates": [-34.8808395,-55.2788979],
+		"coordinates": [
+			-34.8808395,
+			-55.2788979
+		],
 		"instagram": "larinconadanoctiluca"
 	},
 	{
@@ -270,7 +321,10 @@
 			"pt": "Um bar e restaurante na esquina da Avenida Central com a Rambla de los Ingleses, na região de Punta Fría. É conhecido por ter música ao vivo e uma seleção variada de doze cervejas artesanais na torneira. O ambiente é descontraído e familiar, com opções como entradas, hambúrgueres, pizzas e frutos do mar."
 		},
 		"category": "entertainment",
-		"coordinates": [-34.8888767,-55.2810299],
+		"coordinates": [
+			-34.8888767,
+			-55.2810299
+		],
 		"instagram": "https://www.instagram.com/el.beril/"
 	},
 	{
@@ -286,7 +340,10 @@
 			"pt": "O porto de Piriápolis é uma marina no departamento de Maldonado. É um ponto importante para navegação e atividades marítimas na região, oferecendo serviços para embarcações e acesso ao mar."
 		},
 		"category": "activity",
-		"coordinates": [-34.876781,-55.2815486]
+		"coordinates": [
+			-34.876781,
+			-55.2815486
+		]
 	},
 	{
 		"id": "cerro-de-las-animas",
@@ -301,7 +358,10 @@
 			"pt": "Com 501 metros de altitude, o Cerro de las Ánimas é o segundo ponto mais alto do Uruguai. Fica no sudoeste do departamento de Maldonado, perto de Piriápolis, e faz parte da Sierra de las Ánimas. A trilha até o cume é um percurso de ida e volta de aproximadamente 10,1 km, com ganho de elevação de 460 metros. É considerada de dificuldade moderada e costuma levar de 3,5 a 4 horas. Para fazer a caminhada, é necessário se registrar na Cabaña Base, no km 86 da Ruta Interbalnearia, em frente ao Parador Los Cardos."
 		},
 		"category": "hiking",
-		"coordinates": [-34.7757777,-55.3434419]
+		"coordinates": [
+			-34.7757777,
+			-55.3434419
+		]
 	},
 	{
 		"id": "playa-grande",
@@ -311,12 +371,15 @@
 			"pt": "Praia Grande"
 		},
 		"description": {
-			"es": "Playa Grande es una localidad balnearia y suburbio occidental de la ciudad de Piriápolis, en el departamento de Maldonado. Esta playa ofrece un ambiente tranquilo y relajado, ideal para disfrutar de un día de playa con acceso fácil desde Piriápolis.",
-			"en": "Playa Grande is a beach resort and western suburb of the city of Piriápolis, in the Maldonado department. This beach offers a quiet and relaxed atmosphere, ideal for enjoying a beach day with easy access from Piriápolis.",
-			"pt": "Playa Grande é uma localidade balneária e subúrbio a oeste da cidade de Piriápolis, no departamento de Maldonado. A praia tem um clima calmo e relaxado, ideal para curtir o dia com acesso fácil a partir de Piriápolis."
+			"es": "A pesar de su nombre, Playa Grande es una de las playas más pequeñas de la región, lo que le confiere un ambiente íntimo y tranquilo. Su característica más distintiva son las piscinas naturales que se forman entre las rocas, ideales para disfrutar de un baño relajante o practicar buceo en un entorno seguro. El entorno rocoso la convierte en un excelente lugar para la pesca. La playa se extiende entre la Cañada Zanja Honda y las rocas, formando un pequeño recodo con una franja de arenas blancas y finas, perfecta para quienes buscan un espacio más reservado.",
+			"en": "Despite its name, Playa Grande is one of the smallest beaches in the region, giving it an intimate and tranquil atmosphere. Its most distinctive feature is the natural pools that form between the rocks, ideal for enjoying a relaxing swim or practicing diving in a safe environment. The rocky environment makes it an excellent fishing spot. The beach extends between Cañada Zanja Honda and the rocks, forming a small cove with a strip of white and fine sand, perfect for those seeking a more secluded space.",
+			"pt": "Apesar do nome, Playa Grande é uma das menores praias da região, conferindo-lhe uma atmosfera íntima e tranquila. Sua característica mais distintiva são as piscinas naturais que se formam entre as rochas, ideais para desfrutar de um banho relaxante ou praticar mergulho em um ambiente seguro. O ambiente rochoso a torna um excelente local para pesca. A praia se estende entre a Cañada Zanja Honda e as rochas, formando uma pequena enseada com uma faixa de areias brancas e finas, perfeita para quem busca um espaço mais reservado."
 		},
 		"category": "beach",
-		"coordinates": [-34.8458, -55.2969]
+		"coordinates": [
+			-34.8458,
+			-55.2969
+		]
 	},
 	{
 		"id": "playa-hermosa",
@@ -326,12 +389,15 @@
 			"pt": "Praia Hermosa"
 		},
 		"description": {
-			"es": "Playa Hermosa es un balneario ubicado en el departamento de Maldonado, sobre la costa del Río de la Plata. Se encuentra aproximadamente a 4,5 km al noroeste de Piriápolis, limitando con Playa Verde al noroeste y Playa Grande al sudeste. Esta playa es conocida por su belleza natural y su ambiente tranquilo.",
-			"en": "Playa Hermosa is a beach resort located in the Maldonado department, on the coast of the Río de la Plata. It's located approximately 4.5 km northwest of Piriápolis, bordering Playa Verde to the northwest and Playa Grande to the southeast. This beach is known for its natural beauty and tranquil atmosphere.",
-			"pt": "Playa Hermosa é um balneário no departamento de Maldonado, na costa do Río de la Plata. Fica a cerca de 4,5 km a noroeste de Piriápolis, entre Playa Verde (noroeste) e Playa Grande (sudeste). É conhecida pela beleza natural e pela atmosfera tranquila."
+			"es": "Ubicada a 4,5 km al noroeste de Piriápolis, Playa Hermosa se extiende por más de un kilómetro con arenas blancas y finas. Su orientación y ubicación la resguardan del virazón, el viento característico de la tarde, permitiendo disfrutar del sol hasta el atardecer en condiciones ideales. Rodeada por cerros y montes agrestes, incluyendo el cercano Cerro de los Burros de 171 metros de altura, que históricamente fue utilizado por Francisco Piria para alimentar a sus burros. El área tiene un rico patrimonio arqueológico, con evidencia de presencia humana desde el año 10.000 a.C., incluyendo puntas de flechas de grupos paleoindios.",
+			"en": "Located 4.5 km northwest of Piriápolis, Playa Hermosa extends for more than a kilometer with white and fine sand. Its orientation and location protect it from the virazón, the characteristic afternoon wind, allowing you to enjoy the sun until sunset under ideal conditions. Surrounded by wild hills and mountains, including the nearby 171-meter-high Cerro de los Burros, which was historically used by Francisco Piria to feed his donkeys. The area has rich archaeological heritage, with evidence of human presence since 10,000 BC, including arrowheads from Paleo-Indian groups.",
+			"pt": "Localizada a 4,5 km a noroeste de Piriápolis, Playa Hermosa se estende por mais de um quilômetro com areias brancas e finas. Sua orientação e localização a protegem do virazón, o vento característico da tarde, permitindo desfrutar do sol até o pôr do sol em condições ideais. Cercada por morros e montes agrestes, incluindo o próximo Cerro de los Burros de 171 metros de altura, que foi historicamente usado por Francisco Piria para alimentar seus burros. A área tem rico patrimônio arqueológico, com evidências de presença humana desde 10.000 a.C., incluindo pontas de flecha de grupos paleoindígenas."
 		},
 		"category": "beach",
-		"coordinates": [-34.8333, -55.3028]
+		"coordinates": [
+			-34.8333,
+			-55.3028
+		]
 	},
 	{
 		"id": "bella-vista",
@@ -341,12 +407,15 @@
 			"pt": "Bella Vista"
 		},
 		"description": {
-			"es": "Bella Vista es un balneario ubicado en el departamento de Maldonado, a lo largo de la costa del Río de la Plata. Se encuentra aproximadamente a 10 kilómetros al oeste de Piriápolis y a unos 85 kilómetros al este de Montevideo. El balneario está situado entre el Arroyo Espinas al oeste y el Arroyo Las Flores al este, con su playa extendiéndose aproximadamente 3 kilómetros entre estos dos arroyos.",
-			"en": "Bella Vista is a seaside resort located in the Maldonado Department, along the coast of the Río de la Plata. It's located approximately 10 kilometers west of Piriápolis and about 85 kilometers east of Montevideo. The resort is situated between Arroyo Espinas to the west and Arroyo Las Flores to the east, with its beach extending approximately 3 kilometers between these two streams.",
-			"pt": "Bella Vista é um balneário no departamento de Maldonado, ao longo da costa do Río de la Plata. Fica a aproximadamente 10 km a oeste de Piriápolis e cerca de 85 km a leste de Montevidéu. O balneário está entre o Arroyo Espinas (oeste) e o Arroyo Las Flores (leste), com a praia se estendendo por cerca de 3 km entre esses dois cursos d’água."
+			"es": "Ubicado a 10 kilómetros al oeste de Piriápolis, Bella Vista se extiende a lo largo de aproximadamente 3 kilómetros de costa entre el Arroyo Espinas al oeste y el Arroyo Las Flores al este. Sus playas se caracterizan por ser angostas y estar cubiertas de cantos rodados, lo que las convierte en un excelente lugar para la pesca deportiva. Están protegidas hacia el norte por pequeñas barrancas arenosas, creando un entorno sereno y pintoresco ideal para quienes buscan tranquilidad y contacto con la naturaleza.",
+			"en": "Located 10 kilometers west of Piriápolis, Bella Vista extends along approximately 3 kilometers of coastline between Arroyo Espinas to the west and Arroyo Las Flores to the east. Its beaches are characterized by being narrow and covered with pebbles, making them an excellent spot for sport fishing. They are protected to the north by small sandy cliffs, creating a serene and picturesque environment ideal for those seeking tranquility and contact with nature.",
+			"pt": "Localizado a 10 quilômetros a oeste de Piriápolis, Bella Vista se estende ao longo de aproximadamente 3 quilômetros de costa entre o Arroyo Espinas a oeste e o Arroyo Las Flores a leste. Suas praias são caracterizadas por serem estreitas e cobertas de seixos, tornando-as um excelente local para pesca esportiva. Estão protegidas ao norte por pequenas barrancas arenosas, criando um ambiente sereno e pitoresco ideal para quem busca tranquilidade e contato com a natureza."
 		},
 		"category": "beach",
-		"coordinates": [-34.805708,-55.3540598]
+		"coordinates": [
+			-34.805708,
+			-55.3540598
+		]
 	},
 	{
 		"id": "balneario-solis",
@@ -356,12 +425,15 @@
 			"pt": "Balneario Solís"
 		},
 		"description": {
-			"es": "Balneario Solís es un balneario costero ubicado en el departamento de Maldonado, situado en la desembocadura del arroyo Solís Grande, bordeando el Río de la Plata. Este balneario ofrece un ambiente tranquilo y relajado, ideal para disfrutar de la costa uruguaya.",
-			"en": "Balneario Solís is a coastal resort located in the Maldonado Department, situated at the mouth of the Solís Grande stream, bordering the Río de la Plata. This resort offers a quiet and relaxed atmosphere, ideal for enjoying the Uruguayan coast.",
-			"pt": "Balneario Solís é um balneário costeiro no departamento de Maldonado, na foz do arroyo Solís Grande, às margens do Río de la Plata. Oferece um clima calmo e relaxado, ideal para aproveitar a costa uruguaia."
+			"es": "Balneario Solís se encuentra en la desembocadura del arroyo Solís Grande, que nace en Lavalleja y recorre más de 30 kilómetros. El balneario cuenta con dos playas principales: Playa Mansa al oeste, con aguas tranquilas ideales para familias y donde se encuentra la desembocadura del arroyo, perfecta para pesca y deportes náuticos; y Playa Brava al este, con oleaje más intenso y una vista privilegiada de los cerros de Piriápolis a 17 kilómetros de distancia. La zona de la desembocadura fue forestada entre 1937 y 1957 por Miguel Jaureguiberry, transformándola en un refugio ecológico y un paseo ineludible para los visitantes.",
+			"en": "Balneario Solís is located at the mouth of the Solís Grande stream, which originates in Lavalleja and flows for more than 30 kilometers. The resort features two main beaches: Playa Mansa to the west, with calm waters ideal for families and where the stream mouth is located, perfect for fishing and water sports; and Playa Brava to the east, with more intense waves and a privileged view of Piriápolis hills 17 kilometers away. The mouth area was forested between 1937 and 1957 by Miguel Jaureguiberry, transforming it into an ecological refuge and an essential visit for tourists.",
+			"pt": "Balneario Solís está localizado na foz do arroyo Solís Grande, que nasce em Lavalleja e percorre mais de 30 quilômetros. O balneário possui duas praias principais: Playa Mansa a oeste, com águas calmas ideais para famílias e onde fica a foz do arroio, perfeita para pesca e esportes náuticos; e Playa Brava a leste, com ondas mais intensas e uma vista privilegiada dos morros de Piriápolis a 17 quilômetros de distância. A área da foz foi florestada entre 1937 e 1957 por Miguel Jaureguiberry, transformando-a em um refúgio ecológico e um passeio essencial para os visitantes."
 		},
 		"category": "beach",
-		"coordinates": [-34.7925, -55.3836]
+		"coordinates": [
+			-34.7925,
+			-55.3836
+		]
 	},
 	{
 		"id": "rocco-cucina-italiana",
@@ -376,7 +448,10 @@
 			"pt": "Restaurante italiano autêntico a meia quadra da orla, na casa de verão do mestre pizzaiolo italiano Arcangelo Gantile. Dirigido por seu filho Doménico, oferece culinária italiana autêntica com produtos importados da Itália. O cardápio destaca massas, molhos e pizzas no estilo napolitano. O ambiente é aconchegante, com as cores da bandeira italiana e a presença de Rocco, um pequeno cão que recebe os clientes. Durante a temporada de verão, abre todos os dias das 19:30 às 01:00."
 		},
 		"category": "restaurant",
-		"coordinates": [-34.8685297, -55.2747005],
+		"coordinates": [
+			-34.8685297,
+			-55.2747005
+		],
 		"instagram": "https://www.instagram.com/roccoscucinaitaliana/"
 	},
 	{
@@ -392,7 +467,10 @@
 			"pt": "Restaurante na Rambla de los Argentinos que oferece uma variedade de pratos tradicionais com toque moderno. O cardápio inclui especialidades como carnes ao estilo uruguaio (churrascos, milanesas napolitanas), massas artesanais (ravioli, nhoque, lasanha), peixes e frutos do mar (pescada grelhada, paella, lulas recheadas), opções vegetarianas (risottos, saladas gourmet) e sobremesas caseiras. O restaurante é conhecido pelo ambiente aconchegante e serviço amigável."
 		},
 		"category": "restaurant",
-		"coordinates": [-34.8678013, -55.275986]
+		"coordinates": [
+			-34.8678013,
+			-55.275986
+		]
 	},
 	{
 		"id": "ocho-nudos",
@@ -407,7 +485,10 @@
 			"pt": "Restaurante de cozinha autoral na Rambla de los Ingleses, esquina com Suipacha. Oferece uma proposta gastronômica que combina influências mediterrâneas e locais, com cardápio que varia conforme a temporada para garantir a frescura dos ingredientes. As opções do cardápio incluem carnes, hambúrgueres, chivitos, milanesas, massas, pizzas, pokes e bocatas. O restaurante oferece opções para veganos, vegetarianos e pessoas celíacas, tornando-se uma escolha inclusiva. O ambiente é encantador, com decoração que mistura moderno e rústico e oferece vistas espetaculares para o mar."
 		},
 		"category": "restaurant",
-		"coordinates": [-34.8726166,-55.2768192],
+		"coordinates": [
+			-34.8726166,
+			-55.2768192
+		],
 		"instagram": "https://www.instagram.com/ochonudos.uy/"
 	},
 	{
@@ -423,7 +504,10 @@
 			"pt": "Pizzaria na esquina das ruas Misiones e Julián Álvarez, reconhecida por suas pizzetas artesanais de massa fina e ingredientes frescos. O restaurante tem decoração aconchegante, incluindo sofás confortáveis e um cardápio atraente de coquetéis caseiros. Além disso, dispõe de mesas ao ar livre para desfrutar de uma refeição ao ar livre. O horário de funcionamento é de quinta a domingo, das 20:00 às 00:00."
 		},
 		"category": "restaurant",
-		"coordinates": [-34.8551229,-55.2849432]
+		"coordinates": [
+			-34.8551229,
+			-55.2849432
+		]
 	},
 	{
 		"id": "puertito-don-anselmo",
@@ -438,6 +522,9 @@
 			"pt": "Restaurante especializado em peixes e frutos do mar localizado em Punta Fría, sobre as rochas e a poucos metros do mar. Oferece uma ampla culinária tradicional e é famoso por sua paella, que é um dos pratos típicos de Piriápolis. A paella para duas pessoas é generosa e pode servir quatro. O restaurante está aberto o ano todo e oferece um ambiente relaxado e aconchegante, ideal para desfrutar em família. Além disso, conta com uma barra de saladas para acompanhar as refeições."
 		},
 		"category": "restaurant",
-		"coordinates": [-34.8875, -55.2814]
+		"coordinates": [
+			-34.8875,
+			-55.2814
+		]
 	}
 ]
