@@ -472,21 +472,21 @@
 																target="_blank" 
 																rel="noopener noreferrer" 
 																class="nav-text-link"
-																on:click={() => trackNavigationClick('waze', getPlaceText(place, 'title'))}
+																onclick={() => trackNavigationClick('waze', getPlaceText(place, 'title'))}
 															>Waze</a>
 															<a 
 																href="https://www.google.com/maps/dir/?api=1&destination={place.coordinates[0]},{place.coordinates[1]}" 
 																target="_blank" 
 																rel="noopener noreferrer" 
 																class="nav-text-link"
-																on:click={() => trackNavigationClick('google-maps', getPlaceText(place, 'title'))}
+																onclick={() => trackNavigationClick('google-maps', getPlaceText(place, 'title'))}
 															>Google Maps</a>
 															<a 
 																href="https://maps.apple.com/?daddr={place.coordinates[0]},{place.coordinates[1]}&dirflg=d" 
 																target="_blank" 
 																rel="noopener noreferrer" 
 																class="nav-text-link"
-																on:click={() => trackNavigationClick('apple-maps', getPlaceText(place, 'title'))}
+																onclick={() => trackNavigationClick('apple-maps', getPlaceText(place, 'title'))}
 															>Apple Maps</a>
 															{#if getInstagramHref(place)}
 																<a
@@ -494,7 +494,7 @@
 																	target="_blank"
 																	rel="noopener noreferrer"
 																	class="nav-text-link nav-text-link-instagram"
-																	on:click={() => trackNavigationClick('instagram', getPlaceText(place, 'title'))}
+																	onclick={() => trackNavigationClick('instagram', getPlaceText(place, 'title'))}
 																>{instagramLabel}</a>
 															{/if}
 														</div>

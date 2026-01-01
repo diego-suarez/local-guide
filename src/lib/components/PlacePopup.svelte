@@ -120,9 +120,9 @@
 	{@const instagramLabel = currentTranslations.common.instagram ?? 'Instagram'}
 	{@const coverImagePath = getCoverImagePath(currentPlace.id, base)}
 	
-	<div class="popup-overlay" on:click={closePopup} role="button" tabindex="0" on:keydown={handleKeydown}>
-		<div class="popup-container" on:click|stopPropagation role="dialog" aria-modal="true" aria-labelledby="popup-title">
-			<button class="popup-close-button" on:click={closePopup} aria-label="Close">
+	<div class="popup-overlay" onclick={closePopup} role="button" tabindex="0" onkeydown={handleKeydown}>
+		<div class="popup-container" onclick={(e) => { e.stopPropagation(); }} role="dialog" aria-modal="true" aria-labelledby="popup-title">
+			<button class="popup-close-button" onclick={closePopup} aria-label="Close">
 				×
 			</button>
 			
@@ -161,21 +161,21 @@
 									target="_blank" 
 									rel="noopener noreferrer" 
 									class="nav-text-link"
-									on:click={() => trackNavigationClick('waze', placeTitle)}
+									onclick={() => trackNavigationClick('waze', placeTitle)}
 								>Waze</a>
 								<a 
 									href={getGoogleMapsUrl(lat, lng)} 
 									target="_blank" 
 									rel="noopener noreferrer" 
 									class="nav-text-link"
-									on:click={() => trackNavigationClick('google-maps', placeTitle)}
+									onclick={() => trackNavigationClick('google-maps', placeTitle)}
 								>Google Maps</a>
 								<a 
 									href={getAppleMapsUrl(lat, lng)} 
 									target="_blank" 
 									rel="noopener noreferrer" 
 									class="nav-text-link"
-									on:click={() => trackNavigationClick('apple-maps', placeTitle)}
+									onclick={() => trackNavigationClick('apple-maps', placeTitle)}
 								>Apple Maps</a>
 								{#if instagramUrl}
 									<a 
@@ -183,7 +183,7 @@
 										target="_blank" 
 										rel="noopener noreferrer" 
 										class="nav-text-link nav-text-link-instagram"
-										on:click={() => trackNavigationClick('instagram', placeTitle)}
+										onclick={() => trackNavigationClick('instagram', placeTitle)}
 									>{instagramLabel}</a>
 								{/if}
 							</div>
