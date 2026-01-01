@@ -1,145 +1,138 @@
-/**
- * Analytics utility for tracking user interactions
- * Supports Google Analytics 4 (GA4)
- */
-
 import { browser } from '$app/environment';
 
-// Google Analytics 4
+// Declare gtag function for TypeScript
 declare global {
 	interface Window {
-		gtag?: (...args: any[]) => void;
+		gtag?: (
+			command: 'config' | 'event' | 'js' | 'set',
+			targetId: string | Date,
+			config?: Record<string, any>
+		) => void;
 		dataLayer?: any[];
 	}
 }
 
+let isGA4Initialized = false;
+
 /**
  * Initialize Google Analytics 4
- * Manual installation as per Google's recommendations
- * Get your Measurement ID from: https://analytics.google.com/
- * Format: G-XXXXXXXXXX
+ * Loads the GA4 script and configures it with privacy-friendly settings
  */
-export function initGA4(measurementId: string) {
-	if (!browser) return;
+export function initGA4(measurementId: string): void {
+	if (!browser || !measurementId) return;
 
-	// Initialize dataLayer and gtag function (exactly as Google recommends)
-	window.dataLayer = window.dataLayer || [];
-	const dataLayer = window.dataLayer;
-	function gtag(...args: any[]) {
-		dataLayer.push(args);
+	// Prevent double initialization
+	if (isGA4Initialized) return;
+
+	// Initialize dataLayer
+	if (!window.dataLayer) {
+		window.dataLayer = [];
 	}
-	window.gtag = gtag;
+	const dataLayer = window.dataLayer;
+	window.gtag = function (...args: any[]) {
+		dataLayer.push(args);
+	};
 
-	// Call config immediately (Google's pattern - script processes queue when it loads)
-	gtag('js', new Date());
-	gtag('config', measurementId, {
-		// Privacy-friendly settings
-		anonymize_ip: true,
-		allow_google_signals: false,
-		allow_ad_personalization_signals: false
-	});
-
-	// Load gtag.js script (async) - it will process the dataLayer queue when loaded
+	// Load the GA4 script
 	const script = document.createElement('script');
 	script.async = true;
 	script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
 	document.head.appendChild(script);
+
+	// Configure GA4 with privacy-friendly settings
+	window.gtag('js', new Date());
+	window.gtag('config', measurementId, {
+		anonymize_ip: true, // IP anonymization
+		allow_google_signals: false, // Disable Google signals
+		allow_ad_personalization_signals: false, // Disable ad personalization
+		send_page_view: false // We'll send page views manually
+	});
+
+	isGA4Initialized = true;
 }
 
 /**
- * Track a custom event in GA4
+ * Track a page view
  */
-export function trackEventGA4(eventName: string, eventParams?: Record<string, any>) {
-	if (!browser || !window.gtag) return;
-	window.gtag('event', eventName, eventParams);
-}
+export function trackPageViewGA4(pathname: string, measurementId: string): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
 
-/**
- * Track page view in GA4
- */
-export function trackPageViewGA4(path: string, measurementId?: string) {
-	if (!browser || !window.gtag) return;
-	// GA4 automatically tracks page views, but we can send custom page_view events
-	window.gtag('event', 'page_view', {
-		page_path: path
+	window.gtag('config', measurementId, {
+		page_path: pathname,
+		page_title: document.title
 	});
 }
 
 /**
- * Track navigation link clicks (Waze, Google Maps, etc.)
- * Uses beacon transport for external links to ensure tracking completes
+ * Track when a place popup is viewed
  */
-export function trackNavigationClick(service: 'waze' | 'google-maps' | 'apple-maps' | 'instagram', placeName?: string) {
-	const eventData = {
-		service,
-		place_name: placeName || 'unknown'
-	};
+export function trackPlaceView(placeTitle: string, category: string): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
 
-	// Track in GA4 with beacon transport for external links
-	if (browser && window.gtag) {
-		window.gtag('event', 'navigation_click', {
-			...eventData,
-			transport_type: 'beacon' // Ensures event is sent even if page unloads
-		});
-	}
+	window.gtag('event', 'place_view', {
+		place_title: placeTitle,
+		category: category
+	});
 }
 
 /**
- * Track place popup open
+ * Track navigation clicks (Waze, Google Maps, Apple Maps, Instagram)
  */
-export function trackPlaceView(placeName: string, category: string) {
-	const eventData = {
-		place_name: placeName,
-		category
-	};
+export function trackNavigationClick(
+	type: 'waze' | 'google-maps' | 'apple-maps' | 'instagram',
+	placeTitle: string
+): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
 
-	trackEventGA4('place_view', eventData);
+	const eventName = `${type}_click`;
+	window.gtag('event', eventName, {
+		place_title: placeTitle,
+		navigation_type: type
+	});
 }
 
 /**
- * Track location page view
+ * Track when a map marker is clicked
  */
-export function trackLocationView(locationName: string) {
-	const eventData = {
+export function trackMarkerClick(placeTitle: string, category: string): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
+
+	window.gtag('event', 'marker_click', {
+		place_title: placeTitle,
+		category: category
+	});
+}
+
+/**
+ * Track language changes
+ */
+export function trackLanguageChange(language: string): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
+
+	window.gtag('event', 'language_change', {
+		language: language
+	});
+}
+
+/**
+ * Track when a location page is viewed
+ */
+export function trackLocationView(locationName: string): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
+
+	window.gtag('event', 'location_view', {
 		location_name: locationName
-	};
-
-	trackEventGA4('location_view', eventData);
+	});
 }
 
 /**
- * Track language change
+ * Track when a place list item is expanded
  */
-export function trackLanguageChange(language: string) {
-	const eventData = {
-		language
-	};
+export function trackListExpand(placeTitle: string, category: string): void {
+	if (!browser || !isGA4Initialized || !window.gtag) return;
 
-	trackEventGA4('language_change', eventData);
-}
-
-/**
- * Track map marker click
- */
-export function trackMarkerClick(placeName: string, category: string) {
-	const eventData = {
-		place_name: placeName,
-		category,
-		interaction_type: 'map'
-	};
-
-	trackEventGA4('marker_click', eventData);
-}
-
-/**
- * Track list view place expansion
- */
-export function trackListExpand(placeName: string, category: string) {
-	const eventData = {
-		place_name: placeName,
-		category,
-		interaction_type: 'list'
-	};
-
-	trackEventGA4('list_expand', eventData);
+	window.gtag('event', 'list_expand', {
+		place_title: placeTitle,
+		category: category
+	});
 }
