@@ -22,20 +22,15 @@ declare global {
 export function initGA4(measurementId: string) {
 	if (!browser) return;
 
-	// Load gtag.js script (async)
-	const script1 = document.createElement('script');
-	script1.async = true;
-	script1.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-	document.head.appendChild(script1);
-
 	// Initialize dataLayer and gtag function (exactly as Google recommends)
 	window.dataLayer = window.dataLayer || [];
+	const dataLayer = window.dataLayer;
 	function gtag(...args: any[]) {
-		window.dataLayer.push(args);
+		dataLayer.push(args);
 	}
 	window.gtag = gtag;
 
-	// Configure GA4 (as per Google's manual installation)
+	// Call config immediately (Google's pattern - script processes queue when it loads)
 	gtag('js', new Date());
 	gtag('config', measurementId, {
 		// Privacy-friendly settings
@@ -43,6 +38,12 @@ export function initGA4(measurementId: string) {
 		allow_google_signals: false,
 		allow_ad_personalization_signals: false
 	});
+
+	// Load gtag.js script (async) - it will process the dataLayer queue when loaded
+	const script = document.createElement('script');
+	script.async = true;
+	script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+	document.head.appendChild(script);
 }
 
 /**
