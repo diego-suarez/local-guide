@@ -23,6 +23,7 @@
 		if (!browser) return;
 
 		// Initialize Google Analytics 4 (if configured)
+		// This injects the script directly into the head for proper loading
 		if (GA4_MEASUREMENT_ID) {
 			initGA4(GA4_MEASUREMENT_ID);
 		}
