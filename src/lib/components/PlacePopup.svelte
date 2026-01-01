@@ -50,10 +50,12 @@
 
 	let currentPlace = $state<Place | null>(null);
 	let currentLang = $state<Language>('es');
+	let imageExists = $state<boolean>(false);
 
 	// Subscribe to popup store
 	popupPlace.subscribe((place) => {
 		currentPlace = place;
+		imageExists = false; // Reset image state when place changes
 		// Track when a place popup is opened
 		if (place) {
 			trackPlaceView(getPlaceText(place, 'title'), place.category);
@@ -105,6 +107,21 @@
 			document.body.style.overflow = '';
 		}
 	});
+
+	// Check if cover image exists
+	$effect(() => {
+		if (currentPlace && browser) {
+			const coverImagePath = getCoverImagePath(currentPlace.id, base);
+			const img = new Image();
+			img.onload = () => {
+				imageExists = true;
+			};
+			img.onerror = () => {
+				imageExists = false;
+			};
+			img.src = coverImagePath;
+		}
+	});
 </script>
 
 {#if currentPlace}
@@ -149,8 +166,10 @@
 				</div>
 				
 				<!-- Scrollable description section with cover image background -->
-				<div class="popup-scrollable-content" style="background-image: url('{coverImagePath}');">
-					<div class="popup-content-gradient"></div>
+				<div class="popup-scrollable-content" style="background-image: {imageExists ? `url('${coverImagePath}')` : 'none'};">
+					{#if imageExists}
+						<div class="popup-content-gradient"></div>
+					{/if}
 					<div class="popup-content-inner">
 						<!-- Navigation Links -->
 						<div class="popup-navigation">
