@@ -15,25 +15,27 @@ declare global {
 
 /**
  * Initialize Google Analytics 4
+ * Manual installation as per Google's recommendations
  * Get your Measurement ID from: https://analytics.google.com/
  * Format: G-XXXXXXXXXX
  */
 export function initGA4(measurementId: string) {
 	if (!browser) return;
 
-	// Load gtag script
+	// Load gtag.js script (async)
 	const script1 = document.createElement('script');
 	script1.async = true;
 	script1.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
 	document.head.appendChild(script1);
 
-	// Initialize dataLayer and gtag
+	// Initialize dataLayer and gtag function (exactly as Google recommends)
 	window.dataLayer = window.dataLayer || [];
 	function gtag(...args: any[]) {
-		window.dataLayer?.push(args);
+		window.dataLayer.push(args);
 	}
 	window.gtag = gtag;
 
+	// Configure GA4 (as per Google's manual installation)
 	gtag('js', new Date());
 	gtag('config', measurementId, {
 		// Privacy-friendly settings
