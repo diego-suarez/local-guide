@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { loadLocations } from '$lib/utils';
+	import { loadLocations, getCoverImagePath } from '$lib/utils';
+	import { base } from '$app/paths';
 	import { language } from '$lib/i18n';
 	import type { Language } from '$lib/i18n';
 	import { getLocationDescription } from '$lib/utils/i18n';
@@ -97,19 +98,22 @@
 			{#if mounted}
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 					{#each locations as location, index (location.id)}
+						{@const coverImagePath = getCoverImagePath(location.id, base)}
 						<a
-							href="/{location.id}"
-							class="card-modern group block"
+							href="/local-guide/{location.id}"
+							class="card-modern group block location-card"
 							style="animation-delay: {index * 100}ms"
 						>
-							<div class="p-10">
-							<!-- Number badge -->
-							<div class="mb-6 flex items-center gap-4">
-								<div class="w-12 h-12 border-2 border-[#00ffff] flex items-center justify-center text-neon-cyan font-semibold text-lg">
-									{String(index + 1).padStart(2, '0')}
+							<div class="location-card-background" style="background-image: url('{coverImagePath}');"></div>
+							<div class="location-card-gradient"></div>
+							<div class="location-card-content p-10 relative z-10">
+								<!-- Number badge -->
+								<div class="mb-6 flex items-center gap-4">
+									<div class="w-12 h-12 border-2 border-[#00ffff] flex items-center justify-center text-neon-cyan font-semibold text-lg">
+										{String(index + 1).padStart(2, '0')}
+									</div>
+									<div class="h-px flex-1 bg-gradient-to-r from-[#00ffff] to-transparent"></div>
 								</div>
-								<div class="h-px flex-1 bg-gradient-to-r from-[#00ffff] to-transparent"></div>
-							</div>
 
 								<!-- Location Info -->
 								<h3 class="heading-md text-white mb-3 group-hover:text-neon-cyan transition-colors">
@@ -150,4 +154,42 @@
 	</section>
 </div>
 
-<style></style>
+<style>
+	.location-card {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.location-card-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 0.6;
+		transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.location-card:hover .location-card-background {
+		opacity: 0.7;
+	}
+
+	.location-card-gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(40, 40, 55, 0.5) 70%, rgba(60, 60, 75, 0.3) 100%);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.location-card-content {
+		position: relative;
+		z-index: 2;
+	}
+</style>

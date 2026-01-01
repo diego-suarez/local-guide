@@ -7,6 +7,8 @@
 	import type { Language } from '$lib/i18n';
 	import { getPlaceText, getLocationDescription } from '$lib/utils/i18n';
 	import { normalizeInstagramUrl } from '$lib/utils/links';
+	import { getCoverImagePath } from '$lib/utils';
+	import { base } from '$app/paths';
 	import type { Place, Location, Categories } from '$lib/types';
 	import categoriesData from '$lib/data/categories.json';
 	import {
@@ -213,6 +215,9 @@
 		mounted = true;
 	});
 
+	// Get cover image path for location
+	const locationCoverPath = $derived.by(() => getCoverImagePath(data.location.id, base));
+
 </script>
 
 <svelte:head>
@@ -236,8 +241,9 @@
 	</header>
 
 	<!-- City Description -->
-	<section class="section-spacing border-b border-[#282837]">
-		<div class="container-wide max-w-4xl">
+	<section class="section-spacing border-b border-[#282837] location-description-section" style="background-image: url('{locationCoverPath}');">
+		<div class="location-description-gradient"></div>
+		<div class="container-wide max-w-4xl relative z-10">
 			<div class="text-[#ffc800] text-sm font-medium mb-4">{aboutLabel}</div>
 			<p class="text-xl text-[#a0a0b0] leading-relaxed text-balance">
 				{locationDescription}
@@ -603,5 +609,25 @@
 			padding: 4px 8px;
 			white-space: normal;
 		}
+	}
+
+	/* Location description section with cover image */
+	.location-description-section {
+		position: relative;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		overflow: hidden;
+	}
+
+	.location-description-gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(40, 40, 55, 0.5) 70%, rgba(60, 60, 75, 0.3) 100%);
+		pointer-events: none;
+		z-index: 1;
 	}
 </style>

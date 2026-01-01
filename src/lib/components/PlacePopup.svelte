@@ -7,6 +7,8 @@
 	import { getPlaceText } from '$lib/utils/i18n';
 	import type { Place } from '$lib/types';
 	import { normalizeInstagramUrl } from '$lib/utils/links';
+	import { getCoverImagePath } from '$lib/utils';
+	import { base } from '$app/paths';
 	import enTranslations from '$lib/i18n/translations/en.json';
 	import esTranslations from '$lib/i18n/translations/es.json';
 	import ptTranslations from '$lib/i18n/translations/pt.json';
@@ -111,6 +113,7 @@
 	{@const categoryLabel = currentTranslations.common.category}
 	{@const instagramUrl = currentPlace.instagram ? normalizeInstagramUrl(currentPlace.instagram) : null}
 	{@const instagramLabel = currentTranslations.common.instagram ?? 'Instagram'}
+	{@const coverImagePath = getCoverImagePath(currentPlace.id, base)}
 	
 	<div class="popup-overlay" on:click={closePopup} role="button" tabindex="0" on:keydown={handleKeydown}>
 		<div class="popup-container" on:click|stopPropagation role="dialog" aria-modal="true" aria-labelledby="popup-title">
@@ -140,22 +143,25 @@
 					<h3 class="popup-title" id="popup-title">{placeTitle}</h3>
 				</div>
 				
-				<!-- Scrollable description section -->
-				<div class="popup-scrollable-content">
-					<!-- Navigation Links -->
-					<div class="popup-navigation">
-						<div class="popup-navigation-label">{goToLabel}</div>
-						<div class="popup-navigation-links">
-							<a href={getWazeUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Waze</a>
-							<a href={getGoogleMapsUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Google Maps</a>
-							<a href={getAppleMapsUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Apple Maps</a>
-							{#if instagramUrl}
-								<a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="nav-text-link nav-text-link-instagram">{instagramLabel}</a>
-							{/if}
+				<!-- Scrollable description section with cover image background -->
+				<div class="popup-scrollable-content" style="background-image: url('{coverImagePath}');">
+					<div class="popup-content-gradient"></div>
+					<div class="popup-content-inner">
+						<!-- Navigation Links -->
+						<div class="popup-navigation">
+							<div class="popup-navigation-label">{goToLabel}</div>
+							<div class="popup-navigation-links">
+								<a href={getWazeUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Waze</a>
+								<a href={getGoogleMapsUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Google Maps</a>
+								<a href={getAppleMapsUrl(lat, lng)} target="_blank" rel="noopener noreferrer" class="nav-text-link">Apple Maps</a>
+								{#if instagramUrl}
+									<a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="nav-text-link nav-text-link-instagram">{instagramLabel}</a>
+								{/if}
+							</div>
 						</div>
+						
+						<p class="popup-description">{placeDescription}</p>
 					</div>
-					
-					<p class="popup-description">{placeDescription}</p>
 				</div>
 			</div>
 		</div>
@@ -365,14 +371,34 @@
 		flex: 1;
 		overflow-y: auto;
 		overflow-x: hidden;
-		padding: 20px 24px 24px 24px;
+		position: relative;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		/* Custom scrollbar styling */
 		scrollbar-width: thin;
 		scrollbar-color: #282837 #12121c;
 	}
 
+	.popup-content-gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(40, 40, 55, 0.5) 70%, rgba(60, 60, 75, 0.3) 100%);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.popup-content-inner {
+		position: relative;
+		z-index: 2;
+		padding: 20px 24px 24px 24px;
+	}
+
 	@media (max-width: 768px) {
-		.popup-scrollable-content {
+		.popup-content-inner {
 			padding: 16px 16px 16px 16px;
 		}
 	}

@@ -526,5 +526,42 @@
 			-34.8875,
 			-55.2814
 		]
+	},
+	{
+		"id": "alternatus",
+		"title": {
+			"es": "Alternatus Uruguay",
+			"en": "Alternatus Uruguay",
+			"pt": "Alternatus Uruguay"
+		},
+		"description": {
+			"es": "Centro educativo y criadero de reptiles ubicado en el Parque Municipal La Cascada, sobre la Ruta 37. Cuenta con alrededor de 200 animales, incluyendo especies nativas y exóticas como cobras de la India, anacondas, yacarés, iguanas, geckos, pitones, boas, yararás, cruceras, musuranas y falsas corales. El centro ofrece visitas guiadas interactivas para toda la familia, con espacios únicos como un laboratorio de extracción de veneno y una sala de incubación donde los visitantes pueden observar el nacimiento de los animales. Además de su función educativa, Alternatus opera como centro de rescate de reptiles, realizando numerosos rescates de serpientes en la zona. Está abierto todo el año, de 10:00 a 20:00 horas.",
+			"en": "Educational center and reptile breeding facility located in Parque Municipal La Cascada, on Route 37. It houses around 200 animals, including native and exotic species such as Indian cobras, anacondas, caimans, iguanas, geckos, pythons, boas, yararás, cruceras, musuranas, and false corals. The center offers interactive guided tours for the whole family, with unique spaces like a venom extraction laboratory and an incubation room where visitors can observe animal births. In addition to its educational function, Alternatus operates as a reptile rescue center, performing numerous snake rescues in the area. It's open year-round, from 10:00 AM to 8:00 PM.",
+			"pt": "Centro educativo e criadouro de répteis localizado no Parque Municipal La Cascada, na Rota 37. Possui cerca de 200 animais, incluindo espécies nativas e exóticas como cobras da Índia, sucuris, jacarés, iguanas, lagartixas, pítons, jiboias, jararacas, cruzeiras, mussuranas e falsas-corais. O centro oferece visitas guiadas interativas para toda a família, com espaços únicos como um laboratório de extração de veneno e uma sala de incubação onde os visitantes podem observar o nascimento dos animais. Além de sua função educativa, o Alternatus opera como centro de resgate de répteis, realizando inúmeros resgates de serpentes na região. Está aberto o ano todo, das 10:00 às 20:00 horas."
+		},
+		"category": "activity",
+		"coordinates": [
+			-34.8529408,
+			-55.2764296
+		],
+		"instagram": "https://www.instagram.com/alternatus_uruguay/"
+	},
+	{
+		"id": "parque-la-cascada",
+		"title": {
+			"es": "Parque Municipal La Cascada",
+			"en": "Parque Municipal La Cascada",
+			"pt": "Parque Municipal La Cascada"
+		},
+		"description": {
+			"es": "Parque natural ubicado en Piriápolis que combina belleza escénica y áreas recreativas. Su principal atractivo es una cascada de aproximadamente 5 metros de altura, rodeada de un bosque frondoso que ofrece un entorno ideal para el descanso y la conexión con la naturaleza. El parque cuenta con senderos para caminatas y observación de flora y fauna, zonas de picnic equipadas con mesas, bancos de hormigón, techos de totora para sombra y parrillas para disfrutar de asados. También dispone de un área de juegos infantiles, el Museo de la Fauna para concientizar sobre la fauna autóctona, un anfiteatro que acoge eventos artísticos y culturales, y un parador. Recientemente renovado en 2025, el parque fue mejorado con nueva infraestructura, reforestación con 500 árboles y 3.000 plantas, y mejoras en accesos y estacionamiento. El flujo de la cascada depende del caudal del arroyo y las lluvias.",
+			"en": "Natural park located in Piriápolis that combines scenic beauty and recreational areas. Its main attraction is a waterfall approximately 5 meters high, surrounded by a lush forest that offers an ideal environment for rest and connection with nature. The park features trails for hiking and observing flora and fauna, picnic areas equipped with tables, concrete benches, totora roofs for shade, and grills for enjoying barbecues. It also has a children's play area, the Museo de la Fauna to raise awareness about native wildlife, an amphitheater that hosts artistic and cultural events, and a restaurant. Recently renovated in 2025, the park was improved with new infrastructure, reforestation with 500 trees and 3,000 plants, and improvements to access and parking. The waterfall flow depends on the stream's flow and rainfall.",
+			"pt": "Parque natural localizado em Piriápolis que combina beleza cênica e áreas recreativas. Sua principal atração é uma cascata de aproximadamente 5 metros de altura, cercada por um bosque frondoso que oferece um ambiente ideal para descanso e conexão com a natureza. O parque possui trilhas para caminhadas e observação de flora e fauna, áreas de piquenique equipadas com mesas, bancos de concreto, coberturas de totora para sombra e churrasqueiras para desfrutar de churrascos. Também dispõe de uma área de jogos infantis, o Museo de la Fauna para conscientizar sobre a fauna nativa, um anfiteatro que recebe eventos artísticos e culturais, e um restaurante. Recentemente renovado em 2025, o parque foi melhorado com nova infraestrutura, reflorestamento com 500 árvores e 3.000 plantas, e melhorias nos acessos e estacionamento. O fluxo da cascata depende da vazão do arroio e das chuvas."
+		},
+		"category": "nature",
+		"coordinates": [
+			-34.851162,
+			-55.2747467
+		]
 	}
 ]
